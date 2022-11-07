@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class pageRessourceListeFormulaireQualite extends AbstractPage  {
+public class PageRessourceListeFormulaireQualite extends AbstractPage  {
 
-    public pageRessourceListeFormulaireQualite (WebDriver driver) {
+    public PageRessourceListeFormulaireQualite (WebDriver driver) {
         super (driver);
         PageFactory.initElements(driver, this);
 
@@ -25,9 +25,16 @@ public class pageRessourceListeFormulaireQualite extends AbstractPage  {
     @FindBy (xpath="//td[contains (text(), 'Filtre')]")
     public WebElement boutonRechercheFormulaire;
 
- public pageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (WebDriver driver){
+    @FindBy (xpath= "//img[@src='/libreplan/common/img/ico_editar1.png']/parent::*")
+    public WebElement boutonModifierFormulaire;
+
+    @FindBy (xpath="//img[@src='/libreplan/common/img/ico_borrar1.png']/parent::*")
+    public WebElement boutonSupprimerFormulaire;
+
+
+ public PageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (WebDriver driver){
      creerUnFormulaireQualité.click();
-     return PageFactory.initElements(driver, pageRessourceCreerFormulaireQualite.class);
+     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
  }
 
 
@@ -38,6 +45,17 @@ public void faireUneRechercheFormulaire (String formulairename){
      boutonRechercheFormulaire.click();
      assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
 }
+
+public PageRessourceCreerFormulaireQualite clickBoutonModifierFormulaire (WebDriver driver){
+     boutonModifierFormulaire.click();
+     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
+    }
+
+    public void supprimerFormulairesurPageListeFormulaire (){
+     boutonSupprimerFormulaire.click();
+    }
+
+
 
 
 
