@@ -1,10 +1,13 @@
 package org.ProjetLibrePlan;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
@@ -87,6 +90,37 @@ public class PageCreeProfil extends PageHeader {
             infoBulleSupprimer.getText();
             assertEquals ("Supprimer", infoBulleSupprimer.getText());
         }
+
+        public void suppressionRoles() {
+            boutonSupprimerRole1.click();
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[contains(text(), 'Modifier tous les projets')]"))));
+            boutonSupprimerRole2.click();
+            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[contains(text(), 'Participants')]"))));
+        }
+
+        public void selectionnerMemeRole () {
+                // dérouler menu déroulant des roles disponibles
+                menuDeroulantRole.click();
+                // attribuer le role Participants au profil
+                choixParticipantsDansMenuDeroulant.click();
+                //set methode action
+                Actions action = new Actions(driver);
+                //déplacer la souris sur l'icone supprimer role
+                action.moveToElement(boutonSupprimerRole1);
+                //essayer à nouveau de sélectionner le role Participants pour le profil
+                menuDeroulantRole.click();
+                choixParticipantsDansMenuDeroulant.click();
+            }
+
+
+        public void modifiernom(String newname){
+        ChampNomProfil.click();
+        ChampNomProfil.clear();
+        ChampNomProfil.sendKeys(newname);
+
+            }
+
 
 
 
