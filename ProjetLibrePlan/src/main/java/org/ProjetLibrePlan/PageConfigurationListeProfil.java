@@ -18,9 +18,9 @@ public class PageConfigurationListeProfil extends AbstractPage {
 
 
 
-    public pageConfigurationCreeProfil creationDeProfil (){
+    public PageConfigurationCreeProfil creationDeProfil (){
         boutonCreerProfil.click();
-        return PageFactory.initElements(driver, pageConfigurationCreeProfil.class);
+        return PageFactory.initElements(driver, PageConfigurationCreeProfil.class);
     }
 
 }

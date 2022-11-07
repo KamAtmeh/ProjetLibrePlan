@@ -32,7 +32,7 @@ public class PageRessourceListeFormulaireQualite extends AbstractPage  {
     public WebElement boutonSupprimerFormulaire;
 
 
- public PageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (WebDriver driver){
+ public PageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (){
      creerUnFormulaireQualité.click();
      return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
  }
@@ -46,7 +46,7 @@ public void faireUneRechercheFormulaire (String formulairename){
      assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
 }
 
-public PageRessourceCreerFormulaireQualite clickBoutonModifierFormulaire (WebDriver driver){
+public PageRessourceCreerFormulaireQualite clickBoutonModifierFormulaire (){
      boutonModifierFormulaire.click();
      return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
     }

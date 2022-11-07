@@ -3,8 +3,8 @@ package org.ProjetLibrePlan;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class pageConfigurationCreeProfil extends AbstractPage {
-    public pageConfigurationCreeProfil(WebDriver driver) {
+public class PageConfigurationCreeProfil extends AbstractPage {
+    public PageConfigurationCreeProfil(WebDriver driver) {
         super(driver);
     }
 
