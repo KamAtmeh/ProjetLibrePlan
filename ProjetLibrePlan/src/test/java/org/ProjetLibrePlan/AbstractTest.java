@@ -4,13 +4,12 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import utils.Logging;
-import utils.OutilsProjet;
+import utils.GenTools;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
@@ -28,13 +27,11 @@ public class AbstractTest extends Logging {
 
 
     // action and utils
-    //protected Actions action;
-    protected OutilsProjet utils;
+    protected GenTools tools = new GenTools(className);
     protected Properties propertyParam;
-    protected Random random;
 
 
-    // Web Explorer
+   // Web Explorer
     String browser = "chrome";
 
     /*
@@ -81,18 +78,6 @@ public class AbstractTest extends Logging {
         driver.manage().timeouts().implicitlyWait(implicitWaitingTime, TimeUnit.SECONDS);
         wait = new WebDriverWait (driver, explicitWaitingTime);
         LOGGER.info("Setup of implicit wait and driver executed");
-        // define actions
-        LOGGER.info("Setup Actions ...");
-        //action = new Actions(driver);
-        LOGGER.info("Actions class initiated");
-        // initiate screenshot function
-        LOGGER.info("Setup Utils ...");
-        utils = new OutilsProjet();
-        LOGGER.info("Utils initiated");
-        // initiate random generator
-        LOGGER.info("Setup Random ...");
-        random = new Random();
-        LOGGER.info("Random generator initiated");
     }
 
 
@@ -100,7 +85,7 @@ public class AbstractTest extends Logging {
     public void tearDown() throws Exception {
 
         LOGGER.info("Take screenshot of last page ...");
-        utils.takeSnapShot(driver, "test_end.png");
+        tools.takeSnapShot(driver, "test_end.png");
         LOGGER.info("Screenshot taken");
         LOGGER.info("Quit driver ...");
         driver.quit();

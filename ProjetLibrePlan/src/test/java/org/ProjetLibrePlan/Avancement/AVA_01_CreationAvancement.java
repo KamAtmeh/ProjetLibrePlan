@@ -14,7 +14,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
      *********** TESTS START HERE ***********
      */
     @Test
-    public void AVA_01_CreationAvancement() throws IOException, InterruptedException {
+    public void AVA_01_CreationAvancement() throws Throwable {
 
         LOGGER.info("START OF TEST");
 
