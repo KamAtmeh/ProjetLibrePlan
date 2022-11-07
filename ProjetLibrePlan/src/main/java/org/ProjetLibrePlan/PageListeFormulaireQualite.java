@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class PageRessourceListeFormulaireQualite extends AbstractPage  {
+public class PageListeFormulaireQualite extends AbstractPage  {
 
-    public PageRessourceListeFormulaireQualite (WebDriver driver) {
+    public PageListeFormulaireQualite(WebDriver driver) {
         super (driver);
         PageFactory.initElements(driver, this);
 
@@ -32,9 +32,9 @@ public class PageRessourceListeFormulaireQualite extends AbstractPage  {
     public WebElement boutonSupprimerFormulaire;
 
 
- public PageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (){
+ public PageCreerFormulaireQualite clickBoutonCreerFormulaireQualite (){
      creerUnFormulaireQualité.click();
-     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
+     return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
  }
 
 
@@ -46,9 +46,9 @@ public void faireUneRechercheFormulaire (String formulairename){
      assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
 }
 
-public PageRessourceCreerFormulaireQualite clickBoutonModifierFormulaire (){
+public PageCreerFormulaireQualite clickBoutonModifierFormulaire (){
      boutonModifierFormulaire.click();
-     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
+     return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
     }
 
     public void supprimerFormulairesurPageListeFormulaire (){

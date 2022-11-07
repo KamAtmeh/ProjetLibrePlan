@@ -1,6 +1,7 @@
 package org.ProjetLibrePlan;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageConfigurationCreeProfil extends AbstractPage {
@@ -16,5 +17,5 @@ public class PageConfigurationCreeProfil extends AbstractPage {
         }
     }
 
-
+@FindBy
 }
