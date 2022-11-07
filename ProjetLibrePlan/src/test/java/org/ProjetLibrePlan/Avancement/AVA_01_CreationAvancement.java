@@ -34,20 +34,5 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         PageLogin pageLogin = new PageLogin(driver);
         PagePlanification pagePlanification = pageLogin.seConnecter(propertyParam.getProperty("login"), propertyParam.getProperty("pwd"));
         LOGGER.info("Connexion au site");
-
-//        String onglet = "Ressources";
-//        WebElement elementOnglet = driver.findElement(By.xpath("//button[contains(text(), \"" + onglet + "\")]"));
-//        //WebElement elementOnglet = driver.findElement(By.xpath("//button[contains(text(), \"Ressources\")]"));
-//        action.moveToElement(elementOnglet).perform();
-//        Thread.sleep(5000);
-//        String option = "Critère";
-//        WebElement choixOption = driver.findElement(By.xpath("//ul//a[@class=\"z-menu-item-cnt\" and contains(text(), \"" + option + "\")]"));
-//        choixOption.click();
-//        Thread.sleep(5000);
-
-        PageRessourceListeFormulaireQualite pagetypeCritere = pagePlanification.clickOption("Ressources","Formulaires qualité", PageRessourceListeFormulaireQualite.class);
-        Thread.sleep(5000);
-        pagetypeCritere.clickBoutonCreerFormulaireQualite();
-        Thread.sleep(5000);
     }
 }
