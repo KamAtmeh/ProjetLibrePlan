@@ -28,7 +28,7 @@ public class AbstractTest extends Logging {
 
 
     // action and utils
-    protected Actions action;
+    //protected Actions action;
     protected OutilsProjet utils;
     protected Properties propertyParam;
     protected Random random;
@@ -83,7 +83,7 @@ public class AbstractTest extends Logging {
         LOGGER.info("Setup of implicit wait and driver executed");
         // define actions
         LOGGER.info("Setup Actions ...");
-        action = new Actions(driver);
+        //action = new Actions(driver);
         LOGGER.info("Actions class initiated");
         // initiate screenshot function
         LOGGER.info("Setup Utils ...");

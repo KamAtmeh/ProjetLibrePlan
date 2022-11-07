@@ -1,9 +1,6 @@
 package org.ProjetLibrePlan.Avancement;
 
-import org.ProjetLibrePlan.AbstractTest;
-import org.ProjetLibrePlan.PageCreerTypeCritere;
-import org.ProjetLibrePlan.PageLogin;
-import org.ProjetLibrePlan.PagePlanification;
+import org.ProjetLibrePlan.*;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -48,7 +45,9 @@ public class AVA_01_CreationAvancement extends AbstractTest {
 //        choixOption.click();
 //        Thread.sleep(5000);
 
-        pagePlanification.clickOnglet("Ressources","Critère", PageCreerTypeCritere.class);
+        PageRessourceListeFormulaireQualite pagetypeCritere = pagePlanification.clickOption("Ressources","Formulaires qualité", PageRessourceListeFormulaireQualite.class);
+        Thread.sleep(5000);
+        pagetypeCritere.clickBoutonCreerFormulaireQualite();
         Thread.sleep(5000);
     }
 }
