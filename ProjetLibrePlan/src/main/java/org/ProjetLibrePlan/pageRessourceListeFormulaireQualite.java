@@ -1,9 +1,12 @@
 package org.ProjetLibrePlan;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.junit.Assert.assertEquals;
 
 public class pageRessourceListeFormulaireQualite extends AbstractPage  {
 
@@ -22,9 +25,9 @@ public class pageRessourceListeFormulaireQualite extends AbstractPage  {
     @FindBy (xpath="//td[contains (text(), 'Filtre')]")
     public WebElement boutonRechercheFormulaire;
 
- public pageRessourceCreeFormulaireQualite clickBoutonCreerFormulaireQualite (WebDriver driver){
+ public pageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (WebDriver driver){
      creerUnFormulaireQualité.click();
-     return PageFactory.initElements(driver, pageRessourceCreeFormulaireQualite.class);
+     return PageFactory.initElements(driver, pageRessourceCreerFormulaireQualite.class);
  }
 
 
@@ -33,6 +36,7 @@ public void faireUneRechercheFormulaire (String formulairename){
      champRechercheFormulaire.sendKeys(formulairename);
      assertEquals (formulairename, champRechercheFormulaire.getText());
      boutonRechercheFormulaire.click();
+     assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
 }
 
 
