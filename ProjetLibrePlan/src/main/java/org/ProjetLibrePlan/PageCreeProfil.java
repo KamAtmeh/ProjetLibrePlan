@@ -25,6 +25,21 @@ public class PageCreeProfil extends PageHeader {
     @FindBy (xpath="/input[@class='focus-element z-textbox z-textbox-text-invalid']")
     public WebElement menuDeroulantRole;
 
+    @FindBy (xpath="//td[contains (text(),'Participants')]")
+    public WebElement choixParticipantsDansMenuDeroulant;
+
+    @FindBy (xpath="//td[contains (text(),'Dépenses')]")
+    public WebElement choixDépensesDansMenuDeroulant;
+
+    @FindBy (xpath="//td[contains (text(),'Enregistrer')]")
+    public WebElement boutonEnregistrerProfil;
+
+    @FindBy (xpath="//td[contains (text(),'Sauver et continuer')]")
+    public WebElement boutonSauvegarderChangementProfil;
+
+    @FindBy (xpath="//td[contains (text(),'Annuler')]")
+    public WebElement boutonAnnulerProfil;
+
 
 
 
