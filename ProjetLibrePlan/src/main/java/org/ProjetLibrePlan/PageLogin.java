@@ -24,7 +24,7 @@ public class PageLogin extends AbstractPage {
 
     // ********** Méthodes *********** //
 
-    public PagePlanification connectLogin(String username, String password) {
+    public PagePlanification seConnecter(String username, String password) {
         // clear username field and input username
         LOGGER.info("Vider le champ username et ajouter le username");
         username_field.clear();
