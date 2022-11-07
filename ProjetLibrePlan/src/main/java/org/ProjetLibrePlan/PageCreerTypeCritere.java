@@ -1,14 +1,15 @@
 package org.ProjetLibrePlan;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class PageCreerTypeCritere extends PageHeader {
-
-    PageRessourceListeFormulaireQualite pagetypeCritere = pagePlanification.clickOption("Ressources","Formulaires qualité", PageRessourceListeFormulaireQualite.class);
-        Thread.sleep(5000);
-        pagetypeCritere.clickBoutonCreerFormulaireQualite();
-        Thread.sleep(5000);
+    public PageCreerTypeCritere (WebDriver driver){
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
 
     //Xpath tableau
 
@@ -77,7 +78,7 @@ public class PageCreerTypeCritere extends PageHeader {
 
     //corbeille
     @FindBy(xpath="//span[@title=\" Critère - Test bouton [Sauver et continuer]\"]/../../following-sibling::td//img[@src=\"/libreplan/common/img/ico_borrar1.png\"]")
-    private welement boutonSuppr;
+    private WebElement boutonSuppr;
 
     @FindBy(xpath="//div[@class=\"z-window-modal z-window-modal-shadow\"]")
     private WebElement confirmerSuppr;
