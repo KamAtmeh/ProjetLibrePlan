@@ -3,14 +3,14 @@ package org.ProjetLibrePlan;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import utils.Logging;
-import utils.GenTools;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.GenTools;
+import utils.Logging;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
