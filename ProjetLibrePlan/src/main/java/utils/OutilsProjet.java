@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 
 // Class for defining tools specific for this particular project
-public class Utils {
+public class OutilsProjet {
 
     // take screenshot of webpage and stock it in folder
     public static void takeSnapShot(WebDriver driver , String fileName) throws Exception{

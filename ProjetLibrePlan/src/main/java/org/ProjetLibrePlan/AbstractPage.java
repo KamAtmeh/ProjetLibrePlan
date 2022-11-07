@@ -1,4 +1,4 @@
-package org.ProjetLibrePlan.pageObject;
+package org.ProjetLibrePlan;
 
 import org.openqa.selenium.WebDriver;
 import utils.Logging;
@@ -10,5 +10,4 @@ public class AbstractPage extends Logging {
     public AbstractPage (WebDriver driver){
         this.driver = driver;
     }
-
 }
