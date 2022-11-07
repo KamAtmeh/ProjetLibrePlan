@@ -1,5 +1,0 @@
-package org.ProjetLibrePlan;
-
-public class CAL_01_CreerUnCalendrier extends AbstractTest {
-
-}
