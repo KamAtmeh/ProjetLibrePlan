@@ -1,6 +1,5 @@
 package org.ProjetLibrePlan;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,12 +37,13 @@ public class PageListeFormulaireQualite extends AbstractPage  {
  }
 
 
-public void faireUneRechercheFormulaire (String formulairename){
-     champRechercheFormulaire.click ();
-     champRechercheFormulaire.sendKeys(formulairename);
-     assertEquals (formulairename, champRechercheFormulaire.getText());
-     boutonRechercheFormulaire.click();
-     assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
+public void faireUneRechercheFormulaire (String formulairename) {
+    //inserer nom du formulaire qu'on recherche
+    champRechercheFormulaire.click();
+    champRechercheFormulaire.sendKeys(formulairename);
+    assertEquals(formulairename, champRechercheFormulaire.getText());
+    //lancer la recherhce
+    boutonRechercheFormulaire.click();
 }
 
 public PageCreerFormulaireQualite clickBoutonModifierFormulaire (){

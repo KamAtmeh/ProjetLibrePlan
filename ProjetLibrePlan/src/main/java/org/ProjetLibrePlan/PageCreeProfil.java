@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageConfigurationCreeProfil extends AbstractPage {
-    public PageConfigurationCreeProfil(WebDriver driver) {
+public class PageCreeProfil extends AbstractPage {
+    public PageCreeProfil(WebDriver driver) {
         super(driver);
     }
 

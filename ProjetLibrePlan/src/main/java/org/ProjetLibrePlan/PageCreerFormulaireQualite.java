@@ -98,14 +98,18 @@ public class PageCreerFormulaireQualite extends AbstractPage {
         champPourcentageNouvelElementDuFormulaireQualite.click();
         champPourcentageNouvelElementDuFormulaireQualite.sendKeys(pourcentage);
         assertEquals(pourcentage, champPourcentageNouvelElementDuFormulaireQualite.getText());
+        //sauvegarde des modifications faites
         boutonSauverpageCreerFormulaireQualite.click();
 
     }
 
     public void remplirNouvelElementDuFormulaireElement (String name){
+       //ajouter un nouvel element au formulaire
         boutonNouvelElementDuFormulaireQualite.click();
+        //nommer le nouvel element creer
         champNomNouvelElementDuFormulaireQualite.click();
         champNomNouvelElementDuFormulaireQualite.sendKeys(name);
+        //sauvegarder les changements
         boutonSauverpageCreerFormulaireQualite.click();
     }
 
