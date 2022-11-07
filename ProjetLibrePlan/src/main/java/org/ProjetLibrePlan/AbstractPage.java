@@ -1,10 +1,8 @@
 package org.ProjetLibrePlan;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import utils.GenTools;
 import utils.Logging;
-import utils.OutilsProjet;
 
 public class AbstractPage extends Logging {
 

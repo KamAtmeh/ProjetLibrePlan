@@ -27,23 +27,27 @@ public class PageHeader extends AbstractPage {
     // ********** Methodes ************ //
 
     // Se déconnecter
-    public void seDeconnecter(WebElement boutonSignOut) {
-        boutonSignOut.click();
+    public void seDeconnecter(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait, boutonSignOut);
+    }
+
+    public boolean signOutDisplay(){
+        return boutonSignOut.isDisplayed();
     }
 
     // récupérer texte du nom de l'utilisateur
     public String getUsername(WebDriverWait wait){
         wait.until(ExpectedConditions.visibilityOf(welcomeUsername));
         String textWelcome = welcomeUsername.getText();
-        String finalText = textWelcome.substring(13);
-        return finalText;
+        return textWelcome.substring(13);
     }
 
     // méthode
-    public <T> T clickOption(WebDriverWait wait, String onglet, String option, Class<T> className) throws Throwable {
+    public <T> T clickOption(WebDriverWait wait, String menu, String option, Class<T> className) throws Throwable {
         Actions action = new Actions(driver);
-        WebElement elementOnglet = driver.findElement(By.xpath("//button[contains(text(), \"" + onglet + "\")]"));
-        action.moveToElement(elementOnglet).perform();
+        String xpathMenu = "//button[contains(text(), \"" + menu + "\")]";
+        WebElement elementMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathMenu)));
+        action.moveToElement(elementMenu).perform();
         String xpathOption = "//ul//a[@class=\"z-menu-item-cnt\" and contains(text(), \"" + option + "\")]";
         WebElement choixOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathOption)));
         tools.clickElement(wait, choixOption);
