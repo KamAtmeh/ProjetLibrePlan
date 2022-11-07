@@ -1,6 +1,7 @@
 package org.ProjetLibrePlan;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,5 +18,7 @@ public class PageCreeProfil extends AbstractPage {
         }
     }
 
-@FindBy
+@FindBy (xpath="//input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    public WebElement ChampNomProfil ;
+
 }
