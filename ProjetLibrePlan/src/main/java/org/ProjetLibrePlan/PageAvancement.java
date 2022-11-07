@@ -30,7 +30,7 @@ public class PageAvancement extends PageHeader {
     }
 
     // Créer un type d'avancement
-    public void clickCreerAvancement(WebDriverWait wait) throws Throwable {
+    public void creerAvancement(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonCreer);
     }
 

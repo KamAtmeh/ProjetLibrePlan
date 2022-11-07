@@ -35,7 +35,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Clique sur le menu Ressources et choix Type d'avancement");
         PageAvancement pageAvancement = pagePlanification.clickOption(wait, "Ressources", "Types d'avancement", PageAvancement.class);
         LOGGER.info("Création d'un type d'avancement");
-        pageAvancement.clickCreerAvancement(wait);
+        pageAvancement.creerAvancement(wait);
     }
 }
 
