@@ -1,6 +1,5 @@
 package org.ProjetLibrePlan;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class PageRessourceListeFormulaireQualite extends AbstractPage  {
+public class PageListeFormulaireQualite extends AbstractPage  {
 
-    public PageRessourceListeFormulaireQualite (WebDriver driver) {
+    public PageListeFormulaireQualite(WebDriver driver) {
         super (driver);
         PageFactory.initElements(driver, this);
 
@@ -32,23 +31,24 @@ public class PageRessourceListeFormulaireQualite extends AbstractPage  {
     public WebElement boutonSupprimerFormulaire;
 
 
- public PageRessourceCreerFormulaireQualite clickBoutonCreerFormulaireQualite (){
+ public PageCreerFormulaireQualite clickBoutonCreerFormulaireQualite (){
      creerUnFormulaireQualité.click();
-     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
+     return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
  }
 
 
-public void faireUneRechercheFormulaire (String formulairename){
-     champRechercheFormulaire.click ();
-     champRechercheFormulaire.sendKeys(formulairename);
-     assertEquals (formulairename, champRechercheFormulaire.getText());
-     boutonRechercheFormulaire.click();
-     assertEquals ("Créer Formulaire qualité", driver.findElement(By.xpath("//td[contains (text(), 'Créer Formulaire qualité') ]")));
+public void faireUneRechercheFormulaire (String formulairename) {
+    //inserer nom du formulaire qu'on recherche
+    champRechercheFormulaire.click();
+    champRechercheFormulaire.sendKeys(formulairename);
+    assertEquals(formulairename, champRechercheFormulaire.getText());
+    //lancer la recherhce
+    boutonRechercheFormulaire.click();
 }
 
-public PageRessourceCreerFormulaireQualite clickBoutonModifierFormulaire (){
+public PageCreerFormulaireQualite clickBoutonModifierFormulaire (){
      boutonModifierFormulaire.click();
-     return PageFactory.initElements(driver, PageRessourceCreerFormulaireQualite.class);
+     return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
     }
 
     public void supprimerFormulairesurPageListeFormulaire (){

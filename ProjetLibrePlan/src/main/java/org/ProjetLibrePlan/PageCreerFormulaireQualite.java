@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class PageRessourceCreerFormulaireQualite extends AbstractPage {
+public class PageCreerFormulaireQualite extends AbstractPage {
 
-    public PageRessourceCreerFormulaireQualite (WebDriver driver){
+    public PageCreerFormulaireQualite(WebDriver driver){
         super (driver);
         PageFactory.initElements(driver, this);
     }
@@ -98,25 +98,29 @@ public class PageRessourceCreerFormulaireQualite extends AbstractPage {
         champPourcentageNouvelElementDuFormulaireQualite.click();
         champPourcentageNouvelElementDuFormulaireQualite.sendKeys(pourcentage);
         assertEquals(pourcentage, champPourcentageNouvelElementDuFormulaireQualite.getText());
+        //sauvegarde des modifications faites
         boutonSauverpageCreerFormulaireQualite.click();
 
     }
 
     public void remplirNouvelElementDuFormulaireElement (String name){
+       //ajouter un nouvel element au formulaire
         boutonNouvelElementDuFormulaireQualite.click();
+        //nommer le nouvel element creer
         champNomNouvelElementDuFormulaireQualite.click();
         champNomNouvelElementDuFormulaireQualite.sendKeys(name);
+        //sauvegarder les changements
         boutonSauverpageCreerFormulaireQualite.click();
     }
 
-    public PageRessourceListeFormulaireQualite enregistrerPageCreeFormulaireQualite (){
+    public PageListeFormulaireQualite enregistrerPageCreeFormulaireQualite (){
        boutonEnregistrerpageCreerFormulaireQualite.click();
-       return PageFactory.initElements(driver, PageRessourceListeFormulaireQualite.class);
+       return PageFactory.initElements(driver, PageListeFormulaireQualite.class);
     }
 
-    public PageRessourceListeFormulaireQualite annulerPageCreeFormulaireQualite (){
+    public PageListeFormulaireQualite annulerPageCreeFormulaireQualite (){
         boutonAnnulerpageCreerFormulaireQualite.click();
-        return  PageFactory.initElements(driver, PageRessourceListeFormulaireQualite.class);
+        return  PageFactory.initElements(driver, PageListeFormulaireQualite.class);
     }
 
     public void supprimerNouvelElementFormulaire (){

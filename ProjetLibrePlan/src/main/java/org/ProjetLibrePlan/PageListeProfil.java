@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageConfigurationListeProfil extends AbstractPage {
+public class PageListeProfil extends AbstractPage {
 
-    public PageConfigurationListeProfil (WebDriver driver){
+    public PageListeProfil(WebDriver driver){
         super (driver);
         PageFactory.initElements(driver, this);
     }
@@ -18,9 +18,9 @@ public class PageConfigurationListeProfil extends AbstractPage {
 
 
 
-    public PageConfigurationCreeProfil creationDeProfil (){
+    public PageCreeProfil creationDeProfil (){
         boutonCreerProfil.click();
-        return PageFactory.initElements(driver, PageConfigurationCreeProfil.class);
+        return PageFactory.initElements(driver, PageCreeProfil.class);
     }
 
 }
