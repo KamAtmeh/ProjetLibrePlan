@@ -15,7 +15,7 @@ public class PageListeProfil extends PageHeader {
     @FindBy (xpath="//td[@class='z-button-cl']/following-sibling::td[contains (text(), 'Créer')]")
     public WebElement boutonCreerProfil;
 
-    @FindBy (xpath="")
+    //@FindBy (xpath="")
 
 
 
