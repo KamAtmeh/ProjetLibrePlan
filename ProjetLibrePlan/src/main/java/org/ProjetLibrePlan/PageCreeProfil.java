@@ -40,7 +40,7 @@ public class PageCreeProfil extends PageHeader {
     @FindBy (xpath="//td[contains (text(),'Annuler')]")
     public WebElement boutonAnnulerProfil;
 
-    @FindBy (xpath="")
+    @FindBy (xpath="")??
     public WebElement boutonSupprimerRole;
 
     @FindBy (xpath="//table[@class='z-button-over']")

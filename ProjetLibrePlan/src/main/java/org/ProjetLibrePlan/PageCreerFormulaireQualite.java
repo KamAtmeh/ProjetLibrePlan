@@ -56,6 +56,12 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="//td[contains (text(), 'Annuler')]")
     public WebElement boutonAnnulerpageCreerFormulaireQualite;
 
+    @FindBy (xpath="(//input[@class='z-textbox']) [2]")
+    public WebElement champNompourSecondNouvelElement;
+
+    @FindBy (xpath="(//input[@class='z-decimalbox']) [1]")
+    public WebElement champPourcentageSecondNouvelElement;
+
 
     public void remplirChampsPrincipauxFormulaireQualitePourcentage (String nomformulaire, String descriptionformulaire){
         //remplir le champ nom du formulaire
@@ -124,8 +130,27 @@ public class PageCreerFormulaireQualite extends PageHeader {
         return  PageFactory.initElements(driver, PageListeFormulaireQualite.class);
     }
 
+    public void sauvegarder () {
+        boutonSauverpageCreerFormulaireQualite.click();
+    }
+
     public void supprimerNouvelElementFormulaire (){
         boutonsupprimeNouvelElementduFormulaire.click();
+    }
+
+    public void creerSecondNouvelElementDuFormulaire (String secondnom, String secondpourcentage) {
+        //ajouter un nouvel element au formulaire
+        boutonNouvelElementDuFormulaireQualite.click();
+        //remplir champ nom du second element créer
+        champNompourSecondNouvelElement.click();
+        champNompourSecondNouvelElement.sendKeys(secondnom);
+        //remplir champ pourcentage du second element créer
+        champPourcentageSecondNouvelElement.click();
+        champPourcentageSecondNouvelElement.sendKeys(secondpourcentage);
+        //cliquer hors du tableau
+        numeroPositionDuNouvelElementDuFormualireQualite.click();
+
+
     }
 
 
