@@ -1,5 +1,6 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class OutilsProjet {
         String fileWithPath = ".\\target\\screenshots\\" + fileName;
         File DestFile = new File(fileWithPath);
         //Copy file at destination
-        //FileUtils.copyFile(SrcFile, DestFile);
+        FileUtils.copyFile(SrcFile, DestFile);
     }
 }
 
