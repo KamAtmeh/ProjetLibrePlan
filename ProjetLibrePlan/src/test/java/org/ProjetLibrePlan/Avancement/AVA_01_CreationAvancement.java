@@ -24,14 +24,18 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Properties file loaded");
 
         // Driver URL
+        LOGGER.info("Lancement de la page web");
         driver.get("http://localhost:8080/libreplan/");
 
         // initialize login page
+        LOGGER.info("Initialisation du driver à la page login");
         PageLogin pageLogin = new PageLogin(driver);
-        PagePlanification pagePlanification = pageLogin.seConnecter(wait, propertyParam.getProperty("login"), propertyParam.getProperty("pwd"));
         LOGGER.info("Connexion au site");
-        LOGGER.info("Cliquer sur le menu Ressources et choisir Type d'avancement");
+        PagePlanification pagePlanification = pageLogin.seConnecter(wait, propertyParam.getProperty("login"), propertyParam.getProperty("pwd"));
+        LOGGER.info("Clique sur le menu Ressources et choix Type d'avancement");
         PageAvancement pageAvancement = pagePlanification.clickOption(wait, "Ressources", "Types d'avancement", PageAvancement.class);
+        LOGGER.info("Création d'un type d'avancement");
+        pageAvancement.clickCreerAvancement(wait);
     }
 }
 

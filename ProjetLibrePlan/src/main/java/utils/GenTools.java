@@ -22,7 +22,7 @@ public class GenTools extends Logging {
 
     // function to click on element after waiting
     public void clickElement(WebDriverWait wait, WebElement element) throws Throwable {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.visibilityOf(element));
         element.click();
     }
 
