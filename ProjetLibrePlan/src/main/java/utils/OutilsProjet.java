@@ -18,7 +18,7 @@ public class OutilsProjet {
         String fileWithPath = ".\\target\\screenshots\\" + fileName;
         File DestFile = new File(fileWithPath);
         //Copy file at destination
-        FileUtils.copyFile(SrcFile, DestFile);
+        //FileUtils.copyFile(SrcFile, DestFile);
     }
 }
 

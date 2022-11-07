@@ -33,7 +33,7 @@ public class pageRessourceCreerFormulaireQualite extends AbstractPage {
     @FindBy (xpath="//td[contains (text(), 'Nouvel élément du formulaire qualité') ]")
     public WebElement boutonNouvelElementDuFormulaireQualite;
 
-    @FindBy (xpath="")
+    //@FindBy (xpath="")
 
 
 
