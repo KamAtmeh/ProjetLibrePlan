@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageHeader extends AbstractPage {
 
@@ -15,9 +17,28 @@ public class PageHeader extends AbstractPage {
     }
 
     // ********** Variables *********** //
+    @FindBy(xpath="//a[text()=\"[Déconnexion]\"]")
+    WebElement boutonSignOut;
 
+    @FindBy(xpath = "//td[contains(text(),\"utilisateur:\")]")
+    WebElement welcomeUsername;
 
     // ********** Methodes ************ //
+
+    // Se déconnecter
+    public void seDeconnecter(WebElement boutonSignOut) {
+        boutonSignOut.click();
+    }
+
+    // récupérer texte du nom de l'utilisateur
+    public String getUsername(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(welcomeUsername));
+        String textWelcome = welcomeUsername.getText();
+        String finalText = textWelcome.substring(13);
+        return finalText;
+    }
+
+    // méthode
     public <T> T clickOption(String onglet, String option, Class<T> className){
         Actions action = new Actions(driver);
 
