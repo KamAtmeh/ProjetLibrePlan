@@ -10,4 +10,7 @@ public class AbstractPage extends Logging {
     public AbstractPage (WebDriver driver){
         this.driver = driver;
     }
+
+
 }
+
