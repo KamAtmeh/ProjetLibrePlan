@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageListeProfil extends AbstractPage {
+public class PageListeProfil extends PageHeader {
 
     public PageListeProfil(WebDriver driver){
         super (driver);

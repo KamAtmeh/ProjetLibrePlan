@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class PageCreerFormulaireQualite extends AbstractPage {
+public class PageCreerFormulaireQualite extends PageHeader {
 
     public PageCreerFormulaireQualite(WebDriver driver){
         super (driver);

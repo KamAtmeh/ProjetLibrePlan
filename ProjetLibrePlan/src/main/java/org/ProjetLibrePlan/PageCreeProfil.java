@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageCreeProfil extends AbstractPage {
+public class PageCreeProfil extends PageHeader {
     public PageCreeProfil(WebDriver driver) {
         super(driver);
     }
@@ -18,7 +18,14 @@ public class PageCreeProfil extends AbstractPage {
         }
     }
 
-@FindBy (xpath="//input[@class='focus-element z-textbox z-textbox-text-invalid']")
+
+    @FindBy (xpath="//input[@class='focus-element z-textbox z-textbox-text-invalid']")
     public WebElement ChampNomProfil ;
+
+    @FindBy (xpath="/input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    public WebElement menuDeroulantRole;
+
+
+
 
 }
