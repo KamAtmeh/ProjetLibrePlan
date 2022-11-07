@@ -56,6 +56,7 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="//td[contains (text(), 'Annuler')]")
     public WebElement boutonAnnulerpageCreerFormulaireQualite;
 
+
     public void remplirChampsPrincipauxFormulaireQualitePourcentage (String nomformulaire, String descriptionformulaire){
         //remplir le champ nom du formulaire
         champNomFormulaireQualite.click();
