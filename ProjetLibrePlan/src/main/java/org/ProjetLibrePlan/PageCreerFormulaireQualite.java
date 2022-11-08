@@ -61,7 +61,7 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="//td[contains (text(), 'Annuler')]")
     public WebElement boutonAnnulerpageCreerFormulaireQualite;
 
-    @FindBy (xpath="(//input[@class='z-textbox']) [2]")
+    @FindBy (xpath="(//input[@style=\"width:95%;\"]) [1]")
     public WebElement champNompourSecondNouvelElement;
 
     @FindBy (xpath="(//input[@class]) [5]")

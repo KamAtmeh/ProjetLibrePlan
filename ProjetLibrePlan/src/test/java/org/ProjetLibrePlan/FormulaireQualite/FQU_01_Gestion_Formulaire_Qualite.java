@@ -71,7 +71,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         //Creation de la première lsite d'element formulaire qualite
         pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,"Element 1","20");
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
-        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
+        Thread.sleep(10000);
         assertTrue( pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.isDisplayed());
         assertEquals("2", pagecreerformulairequalite.numero2position.getText());
 
@@ -84,7 +84,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
 
         //Cliquer sur bouton 'sauver' et voir si message apparait bien et si titre de la page est bien Formulaire Test1
         pagecreerformulairequalite.sauvegarder(wait);
-        assertTrue(driver.findElement(By.xpath("//span[contains(text(),'Formulaire qualité ')] [1]")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//div[@class='message_INFO']]")).isDisplayed());
         assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Modifier Formulaire qualité: Test1')] ")).isDisplayed());
 
 
