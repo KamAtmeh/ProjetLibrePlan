@@ -67,7 +67,7 @@ public class PageCreeHeure extends PageHeader {
         //remplir le champ code
         champCode.click();
         champCode.sendKeys(copier);
-        //vérification que nom code est bien entrer dans champs
+        //vérification que nom code est bien entré dans champs
         assertEquals(copier, champCode.getText());
        //setting de la méthode copier-coller
         Actions action = new Actions(driver);
