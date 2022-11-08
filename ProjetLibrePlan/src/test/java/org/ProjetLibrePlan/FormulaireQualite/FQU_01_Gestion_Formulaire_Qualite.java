@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.FileInputStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
 
@@ -41,7 +42,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         PageHeader pageHeader = new PageHeader(driver);
 
         //Passage de la souris sur l'ongle Ressources et clique sur sous-categorie Formulaire de qualite
-        pageHeader.clickOption(wait, "Ressources", "Formulaires qualité", PageFormulaireQualite.class);
+        pageHeader.clickOption(wait, propertyParam.getProperty("menu"), propertyParam.getProperty("option"), PageFormulaireQualite.class);
         LOGGER.info("Accès à la page Formulaire qualité");
 
         //Initialisation de pageFormulairequalite et assertion qu'on est bien sur la bonne page
@@ -57,30 +58,64 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         wait.until(ExpectedConditions.elementToBeClickable(pagecreerformulairequalite.champDescriptionFormulaireQualite));
 
         //Entree des donnees dans le corps principal du formulaire de création de Formulaire Qualité et choix d'utiliser Pourcentage et pas Element
-        pagecreerformulairequalite.remplirChampsPrincipauxFormulaireQualitePourcentage(wait,"Test1","Test1");
+        pagecreerformulairequalite.remplirChampsPrincipauxFormulaireQualitePourcentage(wait, propertyParam.getProperty("nomformulaire"), propertyParam.getProperty("descriptionformulaire"));
 
         //Verification des champs de liste elements formulaire qualite
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
         assertEquals("", pagecreerformulairequalite.champNomNouvelElementDuFormulaireQualite.getText());
         assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
+        Thread.sleep(10000);
         wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire));
         pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire.click();
 
         //Creation de la première lsite d'element formulaire qualite
-        pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,"Element 1","20");
+        pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,propertyParam.getProperty("nvlElementname"), propertyParam.getProperty("pourcentage"));
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
-        assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
-        assertEquals("2", driver.findElement(By.xpath("(//span[@class='z-label'])[8]")).getText());
+        Thread.sleep(10000);
+        assertTrue( pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.isDisplayed());
+        assertEquals("2", pagecreerformulairequalite.numero2position.getText());
 
         //Creation de la deuxieme liste d'element formulaire qualite
-        pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait,"Element 2", "40");
+        pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait, propertyParam.getProperty("secondnom"), propertyParam.getProperty("secondpourcentage"));
 
-        //
+        //Verification que Element1 reprend bien la position 1 dans la liste par screenshot
+        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
+        tools.takeSnapShot(driver,"VerificationReprisePositionElement1");
+        LOGGER.info("Screenshot changement de position pris");
+
+        //Cliquer sur bouton 'sauver' et voir si message apparait bien et si titre de la page est bien Formulaire Test1
+        pagecreerformulairequalite.sauvegarder(wait);
+        assertTrue(driver.findElement(By.xpath("//div[@class='message_INFO']")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Modifier Formulaire qualité: Test1')] ")).isDisplayed());
+
+        //Appuyer sur bouton annuler pour retourner à PageFormulaireQualite et verifier que le formulaire crée est bien présent dans la liste
+        pagecreerformulairequalite.annulerPageCreeFormulaireQualite(wait);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
+
+        //Clicker sur nom formulaire et arrivée sur page Modifier, formulaire
+        pageformulairequalite.clickerSurNomFormulaire(wait, propertyParam.getProperty("$nomformulaire"));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//td[contains (text(), 'Modifier Formulaire qualité: Test1') ]")));
+
+        //Modifier champ pourcentage en element
+        PageModifierFormulaireQualite pageModifierFormulaireQualite = new PageModifierFormulaireQualite(driver);
+        pageModifierFormulaireQualite.setMenuDeroulantElement(wait);
+        wait.until(ExpectedConditions.visibilityOf(pageModifierFormulaireQualite.menuDeroulantElement));
+
+        //Enregistrement modification et vérification que message d'enregistrement apparait bien
+        pageModifierFormulaireQualite.passageEnregistrementPageModifierAListe(wait);
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
+
+        //suppression formulaire
+        pageformulairequalite.supprimerFormulairesurPageListeFormulaire(wait);
 
 
 
 
-        //creatio de
+
+
+
+
 
 
 
