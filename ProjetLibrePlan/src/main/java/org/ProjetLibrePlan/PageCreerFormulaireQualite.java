@@ -150,8 +150,6 @@ public class PageCreerFormulaireQualite extends PageHeader {
     }
 
     public void creerSecondNouvelElementDuFormulaire (WebDriverWait wait,String secondnom, String secondpourcentage) throws Throwable {
-        //ajouter un nouvel element au formulaire
-        tools.clickElement(wait,boutonNouvelElementDuFormulaireQualite);
         //remplir champ nom du second element créer
         tools.clickElement(wait,champNompourSecondNouvelElement);
         LOGGER.info("Nom deuxième élément formulaire");
