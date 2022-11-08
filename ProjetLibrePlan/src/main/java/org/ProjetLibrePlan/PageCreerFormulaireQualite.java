@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +15,7 @@ public class PageCreerFormulaireQualite extends PageHeader {
         PageFactory.initElements(driver, this);
     }
 
+    //variables
     @FindBy (xpath="//div/input[@class='focus-element z-textbox z-textbox-text-invalid']")
     public WebElement champNomFormulaireQualite;
 
@@ -62,93 +64,104 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="(//input[@class='z-decimalbox']) [1]")
     public WebElement champPourcentageSecondNouvelElement;
 
+    //Methodes
 
-    public void remplirChampsPrincipauxFormulaireQualitePourcentage (String nomformulaire, String descriptionformulaire){
+
+    public void remplirChampsPrincipauxFormulaireQualitePourcentage (WebDriverWait wait,String nomformulaire, String descriptionformulaire) throws Throwable {
         //remplir le champ nom du formulaire
-        champNomFormulaireQualite.click();
-        champNomFormulaireQualite.sendKeys(nomformulaire);
+       tools.clickElement (wait,champNomFormulaireQualite);
+       LOGGER.info("Nommez le formulaire");
+       tools.setValue(wait,champNomFormulaireQualite,nomformulaire);
         assertEquals (nomformulaire, champNomFormulaireQualite.getText());
         //remplir le champ description
-        champDescriptionFormulaireQualite.click();
-        champDescriptionFormulaireQualite.sendKeys(descriptionformulaire);
+        tools.clickElement(wait,champDescriptionFormulaireQualite);
+        LOGGER.info("Ajoutez une description");
+        tools.setValue(wait,champDescriptionFormulaireQualite,descriptionformulaire);
         assertEquals(descriptionformulaire, champDescriptionFormulaireQualite.getText() );
        //choisir d'afficher le formulaire en pourcentage
-        menuDeroulantTypeFormulaireQualite.click();
-        menuDeroulantPourcentage.click();
+        tools.clickElement(wait,menuDeroulantTypeFormulaireQualite);
+        tools.clickElement(wait,menuDeroulantPourcentage);
         assertEquals("par pourcentage", menuDeroulantTypeFormulaireQualite.getText());
 
 
     }
 
-    public void remplirChampsPrincipauxFormulaireQualiteElement (String formualirename, String descripformulaire){
+    public void remplirChampsPrincipauxFormulaireQualiteElement (WebDriverWait wait,String formualirename, String descripformulaire) throws Throwable {
         //remplir le champ nom du formulaire
-        champNomFormulaireQualite.click();
-        champNomFormulaireQualite.sendKeys(formualirename);
+        tools.clickElement(wait,champNomFormulaireQualite);
+        LOGGER.info("Nommez le formulaire");
+        tools.setValue(wait,champNomFormulaireQualite,formualirename);
         assertEquals(formualirename, champNomFormulaireQualite.getText());
         // remplir le champd description
-        champDescriptionFormulaireQualite.click();
-        champDescriptionFormulaireQualite.sendKeys(descripformulaire);
+        tools.clickElement(wait,champDescriptionFormulaireQualite);
+        LOGGER.info("Ajoutez une description au formulaire");
+        tools.setValue(wait,champDescriptionFormulaireQualite,descripformulaire);
         assertEquals(descripformulaire, champDescriptionFormulaireQualite.getText() );
         // choisir d'afficher le formulaire par element
-        menuDeroulantTypeFormulaireQualite.click();
-        menuDeroulantElement.click();
+        tools.clickElement(wait,menuDeroulantTypeFormulaireQualite);
+        tools.clickElement(wait,menuDeroulantElement);
         assertEquals("par element", menuDeroulantTypeFormulaireQualite.getText());
     }
 
-    public void remplirNouvelElementDuFormulairePourcentage (String nvlElementName, String pourcentage){
+    public void remplirNouvelElementDuFormulairePourcentage (WebDriverWait wait,String nvlElementName, String pourcentage) throws Throwable {
         // remplir le champ nom de la partie Nouvel Element
-        boutonNouvelElementDuFormulaireQualite.click();
-        champNomNouvelElementDuFormulaireQualite.click();
-        champNomNouvelElementDuFormulaireQualite.sendKeys(nvlElementName);
+        tools.clickElement(wait, boutonNouvelElementDuFormulaireQualite);
+        tools.clickElement(wait,champNomNouvelElementDuFormulaireQualite);
+        LOGGER.info(("Nom du nouvel element"));
+        tools.setValue(wait,champNomNouvelElementDuFormulaireQualite,nvlElementName);
         assertEquals(nvlElementName, champNomNouvelElementDuFormulaireQualite.getText());
         //remplir le champ pourcentage de la partie
-        champPourcentageNouvelElementDuFormulaireQualite.click();
+        tools.clickElement(wait,champPourcentageNouvelElementDuFormulaireQualite);
+        LOGGER.info(("Pourcentage en chiffre"));
         champPourcentageNouvelElementDuFormulaireQualite.sendKeys(pourcentage);
         assertEquals(pourcentage, champPourcentageNouvelElementDuFormulaireQualite.getText());
         //sauvegarde des modifications faites
-        boutonSauverpageCreerFormulaireQualite.click();
+        tools.clickElement(wait,boutonSauverpageCreerFormulaireQualite);
 
     }
 
-    public void remplirNouvelElementDuFormulaireElement (String name){
+    public void remplirNouvelElementDuFormulaireElement (WebDriverWait wait,String name) throws Throwable {
        //ajouter un nouvel element au formulaire
-        boutonNouvelElementDuFormulaireQualite.click();
+        tools.clickElement(wait,boutonNouvelElementDuFormulaireQualite);
         //nommer le nouvel element creer
-        champNomNouvelElementDuFormulaireQualite.click();
-        champNomNouvelElementDuFormulaireQualite.sendKeys(name);
+        tools.clickElement(wait,champNomNouvelElementDuFormulaireQualite);
+        LOGGER.info("Nommez le nouvel Element du formulaire");
+        tools.setValue(wait,champNomNouvelElementDuFormulaireQualite,name);
         //sauvegarder les changements
-        boutonSauverpageCreerFormulaireQualite.click();
+        tools.clickElement(wait,boutonSauverpageCreerFormulaireQualite);
     }
 
-    public PageListeFormulaireQualite enregistrerPageCreeFormulaireQualite (){
-       boutonEnregistrerpageCreerFormulaireQualite.click();
-       return PageFactory.initElements(driver, PageListeFormulaireQualite.class);
+    public PageFormulaireQualite enregistrerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonEnregistrerpageCreerFormulaireQualite);
+       return PageFactory.initElements(driver, PageFormulaireQualite.class);
     }
 
-    public PageListeFormulaireQualite annulerPageCreeFormulaireQualite (){
-        boutonAnnulerpageCreerFormulaireQualite.click();
-        return  PageFactory.initElements(driver, PageListeFormulaireQualite.class);
+    public PageFormulaireQualite annulerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonAnnulerpageCreerFormulaireQualite);
+        return  PageFactory.initElements(driver, PageFormulaireQualite.class);
     }
 
-    public void sauvegarder () {
-        boutonSauverpageCreerFormulaireQualite.click();
+    public void sauvegarder (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonSauverpageCreerFormulaireQualite);
     }
 
-    public void supprimerNouvelElementFormulaire (){
-        boutonsupprimeNouvelElementduFormulaire.click();
+    public void supprimerNouvelElementFormulaire (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonsupprimeNouvelElementduFormulaire);
     }
 
-    public void creerSecondNouvelElementDuFormulaire (String secondnom, String secondpourcentage) {
+    public void creerSecondNouvelElementDuFormulaire (WebDriverWait wait,String secondnom, String secondpourcentage) throws Throwable {
         //ajouter un nouvel element au formulaire
-        boutonNouvelElementDuFormulaireQualite.click();
+        tools.clickElement(wait,boutonNouvelElementDuFormulaireQualite);
         //remplir champ nom du second element créer
-        champNompourSecondNouvelElement.click();
-        champNompourSecondNouvelElement.sendKeys(secondnom);
+        tools.clickElement(wait,champNompourSecondNouvelElement);
+        LOGGER.info("Nom deuxième élément formulaire");
+        tools.setValue(wait,champNompourSecondNouvelElement,secondnom);
         //remplir champ pourcentage du second element créer
-        champPourcentageSecondNouvelElement.click();
-        champPourcentageSecondNouvelElement.sendKeys(secondpourcentage);
+        tools.clickElement(wait,champPourcentageSecondNouvelElement);
+        LOGGER.info("Pourcentage en chiffre");
+        tools.setValue(wait,champPourcentageSecondNouvelElement,secondpourcentage);
         //cliquer hors du tableau
-        numeroPositionDuNouvelElementDuFormualireQualite.click();
+        tools.clickElement(wait,numeroPositionDuNouvelElementDuFormualireQualite);
 
 
     }

@@ -57,9 +57,9 @@ public class PageCreeHeure extends PageHeader {
         champCode.clear();
     }
 
-    public void remplirChampCode(String code){
-        champCode.click();
-        champCode.sendKeys(code);
+    public void remplirChampCode(WebDriverWait wait,String code) throws Throwable {
+        tools.clickElement(wait,champCode);
+        tools.setValue(wait,champCode,code);
         assertEquals(code, champCode.getText());
     }
 
@@ -85,24 +85,38 @@ public class PageCreeHeure extends PageHeader {
         champPrixParDéfaut.clear();
     }
 
-    public void remplirchampPrix (String prix){
-        champPrixParDéfaut.click();
-        champPrixParDéfaut.sendKeys(prix);
+    public void remplirchampPrixavecNombre (String prix, WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,champPrixParDéfaut);
+        tools.setValue(wait,champPrixParDéfaut,prix);
+        assertEquals(prix+'€', champPrixParDéfaut.getText());
     }
 
-    public PageListeHeure enregistrerHeureCree (){
-        boutonEnregistrerHeureCree.click();
-        return PageFactory.initElements(driver, PageListeHeure.class);
+    public void remplirchampPrixavecMot (String prix, WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,champPrixParDéfaut);
+        tools.setValue(wait,champPrixParDéfaut,prix);
+        assertEquals(prix+'€', champPrixParDéfaut.getText());
     }
 
-    public void sauverHeureCree (){
-        boutonSauverHeureCree.click();
+    public PageHeure enregistrerHeureCree (WebDriverWait wait) throws Throwable {
+       tools.clickElement (wait,boutonEnregistrerHeureCree);
+        return PageFactory.initElements(driver, PageHeure.class);
+    }
+
+    public void sauverHeureCree (WebDriverWait wait) throws Throwable {
+       tools.clickElement(wait,boutonSauverHeureCree);
 
         }
 
-    public void annulerHeureCree (){
-        boutonAnnuler.click();
+    public void annulerHeureCree (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonAnnuler);
     }
+
+    public void cliquerActivité (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,checkboxActivité);
+    }
+
+
+
     }
 
 

@@ -75,12 +75,12 @@ public class BandeauLaterale extends PageHeader {
     }
 
 
-    public PageListeProjets clickVersPageListeProjets(WebDriverWait wait) {
+    public PageProjets clickVersPageListeProjets(WebDriverWait wait) {
 
         LOGGER.info("Click accès page liste des projets");
         accesPageProjets.click();
         wait.until(ExpectedConditions.visibilityOf(cheminListeProjets));
-        return PageFactory.initElements(driver, PageListeProjets.class);
+        return PageFactory.initElements(driver, PageProjets.class);
     }
 
 
