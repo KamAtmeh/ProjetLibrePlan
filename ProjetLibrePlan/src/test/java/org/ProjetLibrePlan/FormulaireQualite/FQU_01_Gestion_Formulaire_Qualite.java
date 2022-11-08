@@ -53,8 +53,8 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         //Creation d' un nouveau formulaire et vérification qu'on est bien arrivé sur la page PageCreeFormulaireQualite
         pageformulairequalite.clickBoutonCreerFormulaireQualite(wait);
         PageCreerFormulaireQualite pagecreerformulairequalite = new PageCreerFormulaireQualite(driver);
-        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.champNomFormulaireQualite));
-        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.champDescriptionFormulaireQualite));
+        wait.until(ExpectedConditions.elementToBeClickable(pagecreerformulairequalite.champNomFormulaireQualite));
+        wait.until(ExpectedConditions.elementToBeClickable(pagecreerformulairequalite.champDescriptionFormulaireQualite));
 
         //Entree des donnees dans le corps principal du formulaire de création de Formulaire Qualité et choix d'utiliser Pourcentage et pas Element
         pagecreerformulairequalite.remplirChampsPrincipauxFormulaireQualitePourcentage(wait,"Test1","Test1");
@@ -63,17 +63,19 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
         assertEquals("", pagecreerformulairequalite.champNomNouvelElementDuFormulaireQualite.getText());
         assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
-        wait.until(ExpectedConditions.elementToBeClickable(pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire));
+        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire));
         pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire.click();
 
         //Creation de la première lsite d'element formulaire qualite
         pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,"Element 1","20");
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
-        assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.isDisplayed());
-        assertEquals("2", driver.findElement(By.xpath("(//span[@class='z-label'])[8]")).isDisplayed());
+        assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
+        assertEquals("2", driver.findElement(By.xpath("(//span[@class='z-label'])[8]")).getText());
 
         //Creation de la deuxieme liste d'element formulaire qualite
         pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait,"Element 2", "40");
+
+        //
 
 
 

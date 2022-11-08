@@ -16,10 +16,10 @@ public class PageCreerFormulaireQualite extends PageHeader {
     }
 
     //variables
-    @FindBy (xpath="//div/input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    @FindBy (xpath="(//input[@style])[1]")
     public WebElement champNomFormulaireQualite;
 
-    @FindBy (xpath="//textarea[@class='z-textbox']")
+    @FindBy (xpath="//textarea[@class]")
     public WebElement champDescriptionFormulaireQualite;
 
     @FindBy (xpath="//select[@selectedindex='0']")
@@ -37,16 +37,16 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="//td[contains (text(), 'Nouvel élément du formulaire qualité') ]")
     public WebElement boutonNouvelElementDuFormulaireQualite;
 
-    @FindBy (xpath="//div/input[@class='z-textbox']")
+    @FindBy (xpath="(//input[@class]) [4]")
     public WebElement champNomNouvelElementDuFormulaireQualite;
 
     @FindBy (xpath="/html/body/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/div/div/div[2]/div[3]/div[1]/div[2]/div/div/div/div[2]/div/div/div[3]/table/tbody[2]/tr/td[2]/div")
     public WebElement numeroPositionDuNouvelElementDuFormualireQualite;
 
-    @FindBy (xpath="//input[@class='z-decimalbox']")
+    @FindBy (xpath="(//input[@class])[5]")
     public WebElement champPourcentageNouvelElementDuFormulaireQualite;
 
-    @FindBy (xpath="//img[@src='/libreplan/common/img/ico_borrar1.png']/parent::*")
+    @FindBy (xpath="(//td[@class='z-button-cm']) [7]")
     public WebElement boutonsupprimeNouvelElementduFormulaire;
 
     @FindBy (xpath="//td[contains (text(), 'Enregistrer')]")
@@ -72,16 +72,13 @@ public class PageCreerFormulaireQualite extends PageHeader {
        tools.clickElement (wait,champNomFormulaireQualite);
        LOGGER.info("Nommez le formulaire");
        tools.setValue(wait,champNomFormulaireQualite,nomformulaire);
-        assertEquals (nomformulaire, champNomFormulaireQualite.getText());
         //remplir le champ description
         tools.clickElement(wait,champDescriptionFormulaireQualite);
         LOGGER.info("Ajoutez une description");
         tools.setValue(wait,champDescriptionFormulaireQualite,descriptionformulaire);
-        assertEquals(descriptionformulaire, champDescriptionFormulaireQualite.getText() );
        //choisir d'afficher le formulaire en pourcentage
         tools.clickElement(wait,menuDeroulantTypeFormulaireQualite);
         tools.clickElement(wait,menuDeroulantPourcentage);
-        assertEquals("par pourcentage", menuDeroulantTypeFormulaireQualite.getText());
 
 
     }
@@ -109,12 +106,10 @@ public class PageCreerFormulaireQualite extends PageHeader {
         tools.clickElement(wait,champNomNouvelElementDuFormulaireQualite);
         LOGGER.info(("Nom du nouvel element"));
         tools.setValue(wait,champNomNouvelElementDuFormulaireQualite,nvlElementName);
-        assertEquals(nvlElementName, champNomNouvelElementDuFormulaireQualite.getText());
         //remplir le champ pourcentage de la partie
         tools.clickElement(wait,champPourcentageNouvelElementDuFormulaireQualite);
         LOGGER.info(("Pourcentage en chiffre"));
         champPourcentageNouvelElementDuFormulaireQualite.sendKeys(pourcentage);
-        assertEquals(pourcentage, champPourcentageNouvelElementDuFormulaireQualite.getText());
         //sauvegarde des modifications faites
         tools.clickElement(wait,boutonSauverpageCreerFormulaireQualite);
 
