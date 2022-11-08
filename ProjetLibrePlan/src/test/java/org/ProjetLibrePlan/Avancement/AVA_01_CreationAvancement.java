@@ -39,7 +39,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
 
 
     // initiate parameters
-    String pathProperties = "src/test/resources/database/testLibrePlan.properties";
+    String pathProperties = "src/test/resources/database/" + this.className + ".properties";
 
     /*
      *********** TESTS START HERE ***********
