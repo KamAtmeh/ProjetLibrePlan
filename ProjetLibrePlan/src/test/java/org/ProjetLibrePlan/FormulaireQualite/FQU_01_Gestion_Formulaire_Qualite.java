@@ -81,11 +81,34 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         //Verification que Element1 reprend bien la position 1 dans la liste par screenshot
         wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
         tools.takeSnapShot(driver,"VerificationReprisePositionElement1");
+        LOGGER.info("Screenshot changement de position pris");
 
         //Cliquer sur bouton 'sauver' et voir si message apparait bien et si titre de la page est bien Formulaire Test1
         pagecreerformulairequalite.sauvegarder(wait);
-        assertTrue(driver.findElement(By.xpath("//div[@class='message_INFO']]")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//div[@class='message_INFO']")).isDisplayed());
         assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Modifier Formulaire qualité: Test1')] ")).isDisplayed());
+
+        //Appuyer sur bouton annuler pour retourner à PageFormulaireQualite et verifier que le formulaire crée est bien présent dans la liste
+        pagecreerformulairequalite.annulerPageCreeFormulaireQualite(wait);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
+
+        //Clicker sur nom formulaire et arrivée sur page Modifier, formulaire
+        pageformulairequalite.clickerSurNomFormulaire(wait, "Test1");
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//td[contains (text(), 'Modifier Formulaire qualité: Test1') ]")));
+
+        //Modifier champ pourcentage en element
+        PageModifierFormulaireQualite pageModifierFormulaireQualite = new PageModifierFormulaireQualite(driver);
+        pageModifierFormulaireQualite.setMenuDeroulantElement(wait);
+        wait.until(ExpectedConditions.invisibilityOf(pageModifierFormulaireQualite.menuDeroulantPourcentagePageModifier));
+
+        //Enregistrement modification et vérification que message d'enregistrement apparait bien
+        pageModifierFormulaireQualite.passageEnregistrementPageModifierAListe(wait);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
+
+        //suppression formulaire
+        pageformulairequalite.supprimerFormulairesurPageListeFormulaire(wait);
+
+
 
 
 
