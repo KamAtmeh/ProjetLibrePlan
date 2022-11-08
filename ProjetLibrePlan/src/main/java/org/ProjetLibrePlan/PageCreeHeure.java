@@ -87,7 +87,10 @@ public class PageCreeHeure extends PageHeader {
         return PageFactory.initElements(driver, PageListeHeure.class);
     }
 
+    public void sauverHeureCree (){
+        boutonSauverHeureCree.click();
 
+        }
+    }
 
-}
 
