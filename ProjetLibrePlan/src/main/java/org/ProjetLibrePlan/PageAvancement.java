@@ -61,7 +61,7 @@ public class PageAvancement extends PageHeader {
     WebElement titreSauvegarde;
 
     // ********** Methodes ************ //
-    public boolean displayTitle(WebDriverWait wait){
+    public boolean isDisplayTitle(WebDriverWait wait){
         wait.until(ExpectedConditions.visibilityOf(pageTitle));
         return pageTitle.isDisplayed();
     }
@@ -167,10 +167,10 @@ public class PageAvancement extends PageHeader {
     }
 
     // message enregistrement
-    public boolean isDisplayMessageEnregistrement(WebDriverWait wait, String nomUnite){
-        String xpath = "//*[contains(text(),\"Type d'avancement \""+ nomUnite + "\" enregistré\")]";
+    public String getMessageEnregistrement(WebDriverWait wait, String nomUnite){
+        String xpath = "//*[@class=\"message_INFO\"]//*[contains(text(), \"" + nomUnite + "\")]";
         WebElement elem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-        return elem.isDisplayed();
+        return elem.getText();
     }
 
     // titre page modifier

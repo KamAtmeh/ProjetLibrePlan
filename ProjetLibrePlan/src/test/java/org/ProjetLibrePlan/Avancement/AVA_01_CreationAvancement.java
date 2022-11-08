@@ -111,7 +111,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Vérifier que le message d'enregistrement est affiché");
         assertEquals("Le message d'enregistrement est conforme",
                 "Type d'avancement \"" + propertyParam.getProperty("nomUnite_1") + "\" enregistré",
-                pageAvancement.isDisplayMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_1")));
+                pageAvancement.getMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_1")));
         LOGGER.info("Vérification que le nouveau type d'avancement est dans la table");
         assertTrue("Nouveau type d'avancement pas présent dans la table", pageAvancement.isDisplayNouveauType(wait, propertyParam.getProperty("nomUnite_1")));
         LOGGER.info("Vérification de l'état activé du nouveau type d'avancement");
@@ -145,9 +145,26 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Vérifier que le message d'enregistrement est affiché");
         assertEquals("Le message d'enregistrement est conforme",
                 "Type d'avancement \"" + propertyParam.getProperty("nomUnite_2") + "\" enregistré",
-                pageAvancement.isDisplayMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_2")));
+                pageAvancement.getMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_2")));
         LOGGER.info("Vérifier titre de la page après sauvegarde");
-        assertEquals("Le titre de la page n'est pas correct", propertyParam.getProperty("nomUnite_2"), pageAvancement.getTitreModifier(wait));
+        assertEquals("Le titre de la page n'est pas correct",
+                "Modifier Type d'avancement: " + propertyParam.getProperty("nomUnite_2"), pageAvancement.getTitreModifier(wait));
+        LOGGER.info("Clique sur le bouton annuler");
+        pageAvancement.clickAnnuler(wait);
+        LOGGER.info("Vérifier retour sur la page Types d'avancement Liste");
+        pageAvancement.isDisplayTitle(wait);
+        LOGGER.info("Vérification que le nouveau type d'avancement est dans la table");
+        assertTrue("Nouveau type d'avancement pas présent dans la table", pageAvancement.isDisplayNouveauType(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("Vérification de l'état activé du nouveau type d'avancement");
+        assertTrue("Case activé est cochée", pageAvancement.isSelectedActiveNouveauAvancement(wait, propertyParam.getProperty("nomUnite_2")));
+        assertFalse("Case activé est désactivée", pageAvancement.isEnabledActiveNouveauAvancement(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("Vérification de l'état prédéfini du nouveau type d'avancement");
+        assertFalse("Case prédéfini est cochée", pageAvancement.isSelectedPredefNouveauAvancement(wait, propertyParam.getProperty("nomUnite_2")));
+        assertFalse("Case prédéfini est désactivée", pageAvancement.isEnabledPredefNouveauAvancement(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("Vérification de la présence du bouton Modifier");
+        assertTrue("Bouton Modifier n'est pas présent", pageAvancement.isDisplayModifier(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("Vérification de la présence du bouton Supprimer");
+        assertTrue("Bouton Supprimer n'est pas présent", pageAvancement.isDisplaySupprimer(wait, propertyParam.getProperty("nomUnite_2")));
         Thread.sleep(2000);
 
     }
