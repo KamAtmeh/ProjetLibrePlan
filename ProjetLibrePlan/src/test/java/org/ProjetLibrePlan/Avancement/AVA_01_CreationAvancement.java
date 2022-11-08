@@ -165,7 +165,5 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertTrue("Bouton Modifier n'est pas présent", pageAvancement.isDisplayModifier(wait, propertyParam.getProperty("nomUnite_2")));
         LOGGER.info("Vérification de la présence du bouton Supprimer");
         assertTrue("Bouton Supprimer n'est pas présent", pageAvancement.isDisplaySupprimer(wait, propertyParam.getProperty("nomUnite_2")));
-        Thread.sleep(2000);
-
     }
 }
