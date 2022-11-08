@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageListeHeure extends PageHeader {
-    public PageListeHeure(WebDriver driver) {
+public class PageHeure extends PageHeader {
+    public PageHeure(WebDriver driver) {
         super(driver);
     }
 

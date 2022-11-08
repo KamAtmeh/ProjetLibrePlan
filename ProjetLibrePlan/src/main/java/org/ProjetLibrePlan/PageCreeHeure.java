@@ -90,9 +90,9 @@ public class PageCreeHeure extends PageHeader {
         champPrixParDéfaut.sendKeys(prix);
     }
 
-    public PageListeHeure enregistrerHeureCree (){
+    public PageHeure enregistrerHeureCree (){
         boutonEnregistrerHeureCree.click();
-        return PageFactory.initElements(driver, PageListeHeure.class);
+        return PageFactory.initElements(driver, PageHeure.class);
     }
 
     public void sauverHeureCree (){

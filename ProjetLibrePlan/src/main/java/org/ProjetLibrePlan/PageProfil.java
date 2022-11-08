@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageListeProfil extends PageHeader {
+public class PageProfil extends PageHeader {
 
-    public PageListeProfil(WebDriver driver){
+    public PageProfil(WebDriver driver){
         super (driver);
         PageFactory.initElements(driver, this);
     }

@@ -58,14 +58,14 @@ public class PageCreeProfil extends PageHeader {
     public WebElement infoBulleSupprimer;
 
     //*****Methode***
-    public PageListeProfil enregistrerProfilPageCreeProfil(WebDriverWait wait) throws Throwable {
+    public PageProfil enregistrerProfilPageCreeProfil(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonEnregistrerProfil);
-        return PageFactory.initElements(driver, PageListeProfil.class);
+        return PageFactory.initElements(driver, PageProfil.class);
     }
 
-    public PageListeProfil supprimerProfilPageCreeProfil (WebDriverWait wait) throws Throwable {
+    public PageProfil supprimerProfilPageCreeProfil (WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonAnnulerProfil);
-        return PageFactory.initElements(driver, PageListeProfil.class);
+        return PageFactory.initElements(driver, PageProfil.class);
     }
 
     public void sauvegarderProfilPageCreeProfil () {

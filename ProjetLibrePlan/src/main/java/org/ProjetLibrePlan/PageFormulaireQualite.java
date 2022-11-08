@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
-public class PageListeFormulaireQualite extends PageHeader {
+public class PageFormulaireQualite extends PageHeader {
 
-    public PageListeFormulaireQualite(WebDriver driver) {
+    public PageFormulaireQualite(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
 

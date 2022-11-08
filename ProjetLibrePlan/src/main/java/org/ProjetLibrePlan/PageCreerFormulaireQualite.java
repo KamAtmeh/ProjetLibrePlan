@@ -131,14 +131,14 @@ public class PageCreerFormulaireQualite extends PageHeader {
         tools.clickElement(wait,boutonSauverpageCreerFormulaireQualite);
     }
 
-    public PageListeFormulaireQualite enregistrerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
+    public PageFormulaireQualite enregistrerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonEnregistrerpageCreerFormulaireQualite);
-       return PageFactory.initElements(driver, PageListeFormulaireQualite.class);
+       return PageFactory.initElements(driver, PageFormulaireQualite.class);
     }
 
-    public PageListeFormulaireQualite annulerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
+    public PageFormulaireQualite annulerPageCreeFormulaireQualite (WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonAnnulerpageCreerFormulaireQualite);
-        return  PageFactory.initElements(driver, PageListeFormulaireQualite.class);
+        return  PageFactory.initElements(driver, PageFormulaireQualite.class);
     }
 
     public void sauvegarder (WebDriverWait wait) throws Throwable {

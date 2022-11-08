@@ -2,10 +2,10 @@ package org.ProjetLibrePlan;
 
 import org.openqa.selenium.WebDriver;
 
-public class PageListeProjets extends PageHeader {
+public class PageProjets extends PageHeader {
 
 
-    public PageListeProjets(WebDriver driver) {
+    public PageProjets(WebDriver driver) {
         super(driver);
     }
 
