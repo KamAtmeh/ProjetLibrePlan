@@ -27,6 +27,9 @@ public class PageAvancement extends PageHeader {
     @FindBy(xpath = "//td[text()=\"Créer\"]")
     WebElement boutonCreer;
 
+    @FindBy(xpath = "//td[contains(text(), \"Créer Type d'avancement\")]")
+    WebElement titreCreerAvancement;
+
     @FindBy(xpath = "//span[contains(text(), \"Nom d'unité\")]/ancestor::tr//input[@type=\"text\"]")
     WebElement fieldNomUnite;
 
@@ -54,8 +57,8 @@ public class PageAvancement extends PageHeader {
     @FindBy(xpath = "//td[contains(text(), \"Annuler\")]")
     WebElement boutonAnnuler;
 
-    @FindBy(xpath = "//span[contains(text(),\"enregistré\")]")
-    WebElement messageEnregistrement;
+    @FindBy(xpath = "//td[contains(text(), \"Modifier Type d'avancement\")]")
+    WebElement titreSauvegarde;
 
     // ********** Methodes ************ //
     public boolean displayTitle(WebDriverWait wait){
@@ -71,6 +74,11 @@ public class PageAvancement extends PageHeader {
     // Créer un type d'avancement
     public void clickCreerAvancement(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonCreer);
+    }
+
+    // affichage titre
+    public boolean isDisplayTitreCreerAvancement(WebDriverWait wait){
+        return wait.until(ExpectedConditions.visibilityOf(titreCreerAvancement)).isDisplayed();
     }
 
     // Nom d'unité
@@ -139,13 +147,36 @@ public class PageAvancement extends PageHeader {
         tools.setValue(wait, fieldValeurMaximum, valeurMax);
         tools.setValue(wait, fieldPrecision, precision);
         tools.setCheckbox(wait, checkboxPourcentage, checkPourcentage);
+    }
+
+    public boolean isEnabledValeurMax(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(fieldValeurMaximum));
+        return fieldValeurMaximum.isEnabled();
+    }
+
+    public void clickEnregistrer(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonEnregistrer);
     }
 
+    public void clickSauver(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait, boutonSauver);
+    }
+
+    public void clickAnnuler(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait, boutonAnnuler);
+    }
+
     // message enregistrement
-    public String getMessageEnregistrement(WebDriverWait wait){
-        wait.until(ExpectedConditions.visibilityOf(messageEnregistrement));
-        return messageEnregistrement.getText();
+    public boolean isDisplayMessageEnregistrement(WebDriverWait wait, String nomUnite){
+        String xpath = "//*[contains(text(),\"Type d'avancement \""+ nomUnite + "\" enregistré\")]";
+        WebElement elem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return elem.isDisplayed();
+    }
+
+    // titre page modifier
+    public String getTitreModifier(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(titreSauvegarde));
+        return titreSauvegarde.getText();
     }
 
     public boolean isDisplayNouveauType(WebDriverWait wait, String nomUnite){

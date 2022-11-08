@@ -75,7 +75,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertEquals("Noms des colonnes ne sont pas corrects", expectedColsAvancement, pageAvancement.getNomColonnes(wait));
         LOGGER.info("Vérification de la présence du bouton Créer");
         pageAvancement.displayCreer(wait);
-        LOGGER.info("Création d'un type d'avancement");
+        LOGGER.info("Clique sur le bouton créer d'un type d'avancement");
         pageAvancement.clickCreerAvancement(wait);
         LOGGER.info("Vérification des noms des champs du formulaire");
         assertEquals("Noms des champs du formulaire ne sont pas corrects", expectedChampsAvancement, pageAvancement.getNomChamps(wait));
@@ -98,19 +98,20 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertTrue("Bouton sauver n'est pas visible", pageAvancement.isDisplaySauver(wait));
         assertTrue("Bouton annuler n'est pas visible", pageAvancement.isDisplayAnnuler(wait));
 
-        LOGGER.info("******************************* CREATION TYPE AVANCEMENT *******************************");
+        LOGGER.info("******************************* CREATION TYPE AVANCEMENT - 1 *******************************");
         LOGGER.info("Créer un type d'avancement");
         pageAvancement.creerAvancement(wait,
                 propertyParam.getProperty("nomUnite_1"),
-                Boolean.parseBoolean(propertyParam.getProperty("checkActif")),
-                propertyParam.getProperty("valeurMax"),
+                Boolean.parseBoolean(propertyParam.getProperty("checkActif_1")),
+                propertyParam.getProperty("valeurMax_1"),
                 propertyParam.getProperty("defautPrecision"),
-                Boolean.parseBoolean(propertyParam.getProperty("checkPourcentage")));
+                Boolean.parseBoolean(propertyParam.getProperty("checkPourcentage_1")));
+        pageAvancement.clickEnregistrer(wait);
         LOGGER.info("******************************* VERIFICATION DU TYPE AVANCEMENT *******************************");
         LOGGER.info("Vérifier que le message d'enregistrement est affiché");
         assertEquals("Le message d'enregistrement est conforme",
                 "Type d'avancement \"" + propertyParam.getProperty("nomUnite_1") + "\" enregistré",
-                pageAvancement.getMessageEnregistrement(wait));
+                pageAvancement.isDisplayMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_1")));
         LOGGER.info("Vérification que le nouveau type d'avancement est dans la table");
         assertTrue("Nouveau type d'avancement pas présent dans la table", pageAvancement.isDisplayNouveauType(wait, propertyParam.getProperty("nomUnite_1")));
         LOGGER.info("Vérification de l'état activé du nouveau type d'avancement");
@@ -123,6 +124,31 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertTrue("Bouton Modifier n'est pas présent", pageAvancement.isDisplayModifier(wait, propertyParam.getProperty("nomUnite_1")));
         LOGGER.info("Vérification de la présence du bouton Supprimer");
         assertTrue("Bouton Supprimer n'est pas présent", pageAvancement.isDisplaySupprimer(wait, propertyParam.getProperty("nomUnite_1")));
+
+        LOGGER.info("******************************* CREATION TYPE AVANCEMENT - 2*******************************");
+        LOGGER.info("Clique sur le bouton créer d'un type d'avancement");
+        pageAvancement.clickCreerAvancement(wait);
+        LOGGER.info("Vérifier l'affichage du titre de la page");
+        pageAvancement.isDisplayTitreCreerAvancement(wait);
+        LOGGER.info("Créer un type d'avancement");
+        pageAvancement.creerAvancement(wait,
+                propertyParam.getProperty("nomUnite_2"),
+                Boolean.parseBoolean(propertyParam.getProperty("defautActif")),
+                propertyParam.getProperty("defautValeur"),
+                propertyParam.getProperty("defautPrecision"),
+                Boolean.parseBoolean(propertyParam.getProperty("checkPourcentage_2")));
+        LOGGER.info("Vérifier que la case Valeur maximum est désactivée");
+        pageAvancement.isEnabledValeurMax(wait);
+        LOGGER.info("Sauvegarder le type d'avancement");
+        pageAvancement.clickSauver(wait);
+        Thread.sleep(5000);
+        LOGGER.info("Vérifier que le message d'enregistrement est affiché");
+        assertEquals("Le message d'enregistrement est conforme",
+                "Type d'avancement \"" + propertyParam.getProperty("nomUnite_2") + "\" enregistré",
+                pageAvancement.isDisplayMessageEnregistrement(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("Vérifier titre de la page après sauvegarde");
+        assertEquals("Le titre de la page n'est pas correct", propertyParam.getProperty("nomUnite_2"), pageAvancement.getTitreModifier(wait));
+        Thread.sleep(2000);
 
     }
 }
