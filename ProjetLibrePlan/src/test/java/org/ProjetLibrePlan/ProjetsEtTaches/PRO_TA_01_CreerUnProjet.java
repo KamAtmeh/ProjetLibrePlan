@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class PRO_TA_01_CreerUnProjet extends AbstractTest {
 
     // initiate parameters
-    String pathProperties = "src/test/resources/database/testLibrePlan.properties";
+    String pathProperties = "src/test/resources/database/"+this.className+".properties";
 
     /*
      *********** TESTS START HERE ***********
@@ -45,7 +45,11 @@ public class PRO_TA_01_CreerUnProjet extends AbstractTest {
         Thread.sleep(2000);
 
         //Remplir les champs du formulaire
-        LOGGER.info("Fill the create a project form");
+        LOGGER.info("clear name field and input projectName");
+        pageCreerProjet.RedirectionSuiteCreationProjet(wait,propertyParam.getProperty("projectName"),propertyParam.getProperty("projecCode"));
+        LOGGER.info("Uncheck Generer code box");
+
+        //
     }
 }
 
