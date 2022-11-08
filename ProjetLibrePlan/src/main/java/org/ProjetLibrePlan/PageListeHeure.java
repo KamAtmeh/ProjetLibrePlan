@@ -28,18 +28,18 @@ public class PageListeHeure extends PageHeader {
         return PageFactory.initElements(driver, PageCreeHeure.class);
     }
 
-    public PageCreeHeure cliquerNom (){
-        Nomclickable.click();;
+    public PageCreeHeure cliquerNom (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,Nomclickable);
         return PageFactory.initElements(driver, PageCreeHeure.class);
     }
 
-    public PageCreeHeure cliquerPrix (){
-       Prixclickable.click();;
+    public PageCreeHeure cliquerPrix (WebDriverWait wait) throws Throwable {
+       tools.clickElement (wait,Prixclickable);
         return PageFactory.initElements(driver, PageCreeHeure.class);
     }
 
-    public PageCreeHeure cliquerCode (){
-        Codeclickable.click();;
+    public PageCreeHeure cliquerCode (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,Codeclickable);
         return PageFactory.initElements(driver, PageCreeHeure.class);
     }
 
