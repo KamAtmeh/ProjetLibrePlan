@@ -74,7 +74,7 @@ public class PageTypesCriteres extends PageHeader {
 
     //titres page
     @FindBy(xpath = "//td[@class=\"z-caption-l\"]")
-    public WebElement titre;
+    public WebElement titrePage;
 
     //corbeille
     @FindBy(xpath = "//span[@title=\"Critère - Test bouton [Sauver et continuer]\"]")
@@ -168,7 +168,8 @@ public class PageTypesCriteres extends PageHeader {
     }
 
     //remplissage du formulaire de création de critère
-    public void remplissageFormulaireA() {
+    public void remplissageFormulaireAnnul(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(formulaireCreationCritere));
         champNom.sendKeys("Critère - Test bouton [Annuler]");
         typeParticipant.isDisplayed();
         caseValeurs.isSelected();
@@ -178,14 +179,17 @@ public class PageTypesCriteres extends PageHeader {
     }
 
     //clic Annuler puis verif Annuler pas présent
-    public void clicAnnulerCréation() {
+    public void clicAnnulerCréation(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(boutonAnnulerCritere));
         boutonAnnulerCritere.click();
-        assertEquals("Types de critères Liste", titre.getText());
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Types de critères Liste", titrePage.getText());
         assertFalse("ok", boutonAnnulerCritere.isDisplayed());
     }
 
     //remplissage du formulaire de création de critère
-    public void remplissageFormulaireE() {
+    public void remplissageFormulaireEnreg(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(formulaireCreationCritere));
         champNom.sendKeys("Critère - Test bouton [Enregistrer]");
         typeParticipant.isDisplayed();
         caseValeurs.isSelected();
@@ -195,14 +199,17 @@ public class PageTypesCriteres extends PageHeader {
     }
 
     //clic Enregistrer puis verif Enregistrer présent
-    public void clicEnregistrerCréation() {
-        boutonAnnulerCritere.click();
-        assertEquals("Types de critères Liste", titre.getText());
+    public void clicEnregistrerCréation(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(boutonEnregistrerCritere));
+        boutonEnregistrerCritere.click();
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Types de critères Liste", titrePage.getText());
         assertTrue("ok", boutonEnregistrerCritere.isDisplayed());
     }
 
     //remplissage du formulaire de création de critère
-    public void remplissageFormulaireSC() {
+    public void remplissageFormulaireSC(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(formulaireCreationCritere));
         champNom.sendKeys("Critère - Test bouton [Sauver et continuer]");
         typeParticipant.isDisplayed();
         caseValeurs.isSelected();
@@ -212,25 +219,30 @@ public class PageTypesCriteres extends PageHeader {
     }
 
     //clic sauver et continuer puis verif, annulation et revérif (PT 7 et 8)
-    public void clicSCCréation() {
+    public void clicSCCréation(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(boutonSCCritere));
         boutonSCCritere.click();
-        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titre.getText());
+        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titrePage.getText());
         //récup xpath fenêtre d'enregistrement
         assertEquals("Type de critère \"Critère - Test bouton [Sauver et continuer]\"enregistré", fenetreConfirm.getText());
         assertTrue("ok", boutonSCCritere.isDisplayed());
         boutonAnnulerCritere.click();
-        assertEquals("Types de critères Liste", titre.getText());
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Types de critères Liste", titrePage.getText());
         assertTrue("ok", exempleCritereEnregistrement.isDisplayed());
     }
 
     //accès modification PT9
-    public void accèsModif() {
+    public void accèsModif(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(boutonModif));
         boutonModif.click();
-        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titre.getText());
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titrePage.getText());
     }
 
     //modif (pt10)
-    public void modifCritereAnnuler() {
+    public void modifCritereAnnuler(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(formulaireCreationCritere));
         champNom.clear();
         champNom.sendKeys("Critère - Test bouton [Sauver et continuer] 2");
         boutonAnnulerCritere.click();
@@ -238,41 +250,50 @@ public class PageTypesCriteres extends PageHeader {
     }
 
     //accès modification PT11
-    public void accèsModifNom() {
+    public void accèsModifNom(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(exempleCritereEnregistrement));
         exempleCritereEnregistrement.click();
-        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titre.getText());
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titrePage.getText());
     }
 
     //modif PT12 et 13, 14
-    public void modifCritereSC() {
+    public void modifCritereSC(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(formulaireCreationCritere));
         champNom.clear();
         champNom.sendKeys("Critère - Test bouton [Sauver et continuer] 2");
         blancPage.click();
-        assertEquals("Critère - Test bouton [Sauver et continuer] 2", titre.getText());
+        assertEquals("Critère - Test bouton [Sauver et continuer] 2", titrePage.getText());
         boutonSCCritere.click();
+        wait.until(ExpectedConditions.visibilityOf(fenetreConfirm));
         assertEquals("Type de critère \"Critère - Test bouton [Sauver et continuer] 2 \"enregistré", fenetreConfirm.getText());
-        assertEquals("Critère - Test bouton [Sauver et continuer] 2", titre.getText());
+        assertEquals("Critère - Test bouton [Sauver et continuer] 2", titrePage.getText());
         boutonAnnulerCritere.click();
-        assertEquals("Types de critères Liste", titre.getText());
+        wait.until(ExpectedConditions.visibilityOf(titrePage));
+        assertEquals("Types de critères Liste", titrePage.getText());
         assertEquals("Critère - Test bouton [Sauver et continuer] 2", exempleCritereModif.getText());
     }
 
-    public void annulationSuppressionCritere() {
+    public void annulationSuppressionCritere(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(confirmerSuppr));
         boutonSuppr.click();
         confirmerSuppr.isDisplayed();
         okSuppr.isDisplayed();
         annulSuppr.isDisplayed();
         annulSuppr.click();
+        wait.until(ExpectedConditions.visibilityOf(exempleCritereModif));
         assertFalse(confirmerSuppr.isDisplayed());
         exempleCritereModif.isDisplayed();
     }
 
-    public void confirmationSuppressionCritere() {
+    public void confirmationSuppressionCritere(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOf(confirmerSuppr));
         boutonSuppr.click();
         confirmerSuppr.isDisplayed();
         okSuppr.isDisplayed();
         annulSuppr.isDisplayed();
         okSuppr.click();
+        wait.until(ExpectedConditions.visibilityOf(confirmerSuppr));
         fenetreConfirm.isDisplayed();
         assertFalse(exempleCritereModif.isDisplayed());
     }
