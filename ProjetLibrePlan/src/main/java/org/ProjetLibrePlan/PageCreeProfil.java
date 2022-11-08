@@ -57,13 +57,13 @@ public class PageCreeProfil extends PageHeader {
     public WebElement infoBulleSupprimer;
 
 
-    public PageListeProfil enregistrerProfilPageCreeProfil() {
-        boutonEnregistrerProfil.click();
+    public PageListeProfil enregistrerProfilPageCreeProfil(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonEnregistrerProfil);
         return PageFactory.initElements(driver, PageListeProfil.class);
     }
 
-    public PageListeProfil supprimerProfilPageCreeProfil () {
-        boutonAnnulerProfil.click();
+    public PageListeProfil supprimerProfilPageCreeProfil (WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonAnnulerProfil);
         return PageFactory.initElements(driver, PageListeProfil.class);
     }
 
@@ -71,15 +71,16 @@ public class PageCreeProfil extends PageHeader {
         boutonSauvegarderChangementProfil.click();
     }
 
-    public void creerProfil (String name){
+    public void creerProfil (String name, WebDriverWait wait) throws Throwable {
         //nommer nouveau profil qu'on veut créer
-        ChampNomProfil.click();
-        ChampNomProfil.sendKeys (name);
+        tools.clickElement(wait, ChampNomProfil);
+        tools.setValue(wait, ChampNomProfil, name);
         // dérouler menu déroulant des roles disponibles
-        menuDeroulantRole.click();
-       // attribuer les roles Dépenses et Participant à ce nouveau profil
-        choixParticipantsDansMenuDeroulant.click();
-        choixDépensesDansMenuDeroulant.click();}
+        tools.clickElement(wait, menuDeroulantRole);
+        // attribuer les roles Dépenses et Participant à ce nouveau profil
+        tools.clickElement(wait, choixParticipantsDansMenuDeroulant);
+        tools.clickElement(wait, choixDépensesDansMenuDeroulant);
+    }
 
         public void passerSurInfoBulle() {
            //set methode action
@@ -99,25 +100,26 @@ public class PageCreeProfil extends PageHeader {
             wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[contains(text(), 'Participants')]"))));
         }
 
-        public void selectionnerMemeRole () {
+        public void selectionnerMemeRole (WebDriverWait wait) throws Throwable {
                 // dérouler menu déroulant des roles disponibles
-                menuDeroulantRole.click();
+                tools.clickElement(wait,menuDeroulantRole);
                 // attribuer le role Participants au profil
-                choixParticipantsDansMenuDeroulant.click();
+                tools.clickElement(wait, choixParticipantsDansMenuDeroulant);
                 //set methode action
                 Actions action = new Actions(driver);
                 //déplacer la souris sur l'icone supprimer role
                 action.moveToElement(boutonSupprimerRole1);
                 //essayer à nouveau de sélectionner le role Participants pour le profil
-                menuDeroulantRole.click();
-                choixParticipantsDansMenuDeroulant.click();
+                tools.clickElement(wait, menuDeroulantRole);
+                tools.clickElement(wait,choixParticipantsDansMenuDeroulant);
             }
 
 
-        public void modifiernom(String newname){
-        ChampNomProfil.click();
+        public void modifiernom(String newname, WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,ChampNomProfil);
         ChampNomProfil.clear();
-        ChampNomProfil.sendKeys(newname);
+        LOGGER.info("Entrer le nouveau nom que vous voulez donner au profil");
+        tools.setValue(wait,ChampNomProfil,newname);
 
             }
 
