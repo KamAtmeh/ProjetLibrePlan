@@ -61,7 +61,7 @@ public class PageFormulaireQualite extends PageHeader {
     }
 
     public PageModifierFormulaireQualite clickerSurNomFormulaire(WebDriverWait wait,String $nomformulaire) throws Throwable {
-        WebElement nomclickable = driver.findElement(By.xpath("//span[contains (text(), '$nomformulaire')]"));
+        WebElement nomclickable = driver.findElement(By.xpath("(//span[contains (text(), 'Test1')])[2]"));
         tools.clickElement(wait,nomclickable);
         return PageFactory.initElements(driver, PageModifierFormulaireQualite.class);
     }

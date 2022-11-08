@@ -99,10 +99,11 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         //Modifier champ pourcentage en element
         PageModifierFormulaireQualite pageModifierFormulaireQualite = new PageModifierFormulaireQualite(driver);
         pageModifierFormulaireQualite.setMenuDeroulantElement(wait);
-        wait.until(ExpectedConditions.invisibilityOf(pageModifierFormulaireQualite.menuDeroulantPourcentagePageModifier));
+        wait.until(ExpectedConditions.visibilityOf(pageModifierFormulaireQualite.menuDeroulantElement));
 
         //Enregistrement modification et vérification que message d'enregistrement apparait bien
         pageModifierFormulaireQualite.passageEnregistrementPageModifierAListe(wait);
+        Thread.sleep(10000);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
 
         //suppression formulaire
