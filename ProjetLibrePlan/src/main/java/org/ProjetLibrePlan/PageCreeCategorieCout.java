@@ -54,6 +54,12 @@ public class PageCreeCategorieCout extends PageHeader{
     @FindBy (xpath ="(//span[contains(text(),'Etes-vous sûr de vouloir supprimer ce coût horaire ?')])[2]")
     WebElement messageQuandOnvaSupprimerUneNouvelleLigneCout;
 
+    @FindBy (xpath = "(//td[contains(text(),'OK')]) [2]")
+    WebElement boutonOkFrameSuppressionNouvelleLigneCout;
+
+    @FindBy (xpath= "(//td[contains(text(),'Annuler')]) [2]")
+    WebElement boutonAnnulerFrameSuppressionNouvelleLigneCout;
+
 
 
 
