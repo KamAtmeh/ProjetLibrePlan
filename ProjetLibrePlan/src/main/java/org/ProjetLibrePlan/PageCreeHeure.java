@@ -91,6 +91,10 @@ public class PageCreeHeure extends PageHeader {
         boutonSauverHeureCree.click();
 
         }
+
+    public void annulerHeureCree (){
+        boutonAnnuler.click();
+    }
     }
 
 
