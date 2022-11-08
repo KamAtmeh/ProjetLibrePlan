@@ -64,15 +64,23 @@ public class PageCreeHeure extends PageHeader {
     }
 
     public void remplireCodtCopierCollerDansPrix (String copier){
+        //remplir le champ code
         champCode.click();
         champCode.sendKeys(copier);
+        //vérification que nom code est bien entrer dans champs
         assertEquals(copier, champCode.getText());
+       //setting de la méthode copier-coller
         Actions action = new Actions(driver);
+        //copier nom donné au code
         champCode.sendKeys(Keys.CONTROL, "c");
         champPrixParDéfaut.click();
+        // collé dans champ prix
         champPrixParDéfaut.sendKeys(Keys.CONTROL,"v");
+        //initialiser méthode qui attend message d'erreur
         WebDriverWait wait = new WebDriverWait(driver, 10);
+        //driver attend que le message d'erreur soit visible
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Vous devez spécifier un nombre au lieu ')]")));
+        // nettoyage du champ prix
         champPrixParDéfaut.click();
         champPrixParDéfaut.clear();
     }

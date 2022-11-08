@@ -13,7 +13,8 @@ public class PageListeHeure extends PageHeader {
     @FindBy (xpath = "//td[contains(text(), 'Créer')]")
     public WebElement boutoncCreeListeHeure;
 
-    @FindBy
+    @FindBy (xpath = "(//span[@class='z-label']) [2]")
+    public WebElement Nomclickable;
 
 
     public PageCreeHeure creerPageCreeHeure (){
