@@ -148,4 +148,48 @@ public class PageAvancement extends PageHeader {
         return messageEnregistrement.getText();
     }
 
+    public boolean isDisplayNouveauType(WebDriverWait wait, String nomUnite){
+        String xpath = "//span[contains(text(),\"" + nomUnite + "\")]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isDisplayed();
+    }
+
+    // case activé du nouveau type d'avancement
+    public boolean isSelectedActiveNouveauAvancement(WebDriverWait wait, String nomUnite){
+        String xpath = "(//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//input)[1]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isSelected();
+    }
+
+    public boolean isEnabledActiveNouveauAvancement(WebDriverWait wait, String nomUnite){
+        String xpath = "(//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//input)[1]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isEnabled();
+    }
+
+    // case prédéfini du nouveau type d'avancement
+    public boolean isSelectedPredefNouveauAvancement(WebDriverWait wait, String nomUnite){
+        String xpath = "(//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//input)[2]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isSelected();
+    }
+
+    public boolean isEnabledPredefNouveauAvancement(WebDriverWait wait, String nomUnite){
+        String xpath = "(//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//input)[2]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isEnabled();
+    }
+
+    // icônes d'un type d'avancement
+    public boolean isDisplayModifier(WebDriverWait wait, String nomUnite){
+        String xpath = "//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//img[contains(@src, \"editar1\")]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isDisplayed();
+    }
+
+    public boolean isDisplaySupprimer(WebDriverWait wait, String nomUnite){
+        String xpath = "//span[contains(text(),\"" + nomUnite + "\")]//ancestor::tr//img[contains(@src, \"borrar1\")]";
+        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        return el.isDisplayed();
+    }
 }
