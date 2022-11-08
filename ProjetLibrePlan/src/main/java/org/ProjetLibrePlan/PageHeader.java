@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PageHeader extends AbstractPage {
 
     // ********* Constructeur ******** //
@@ -40,6 +43,17 @@ public class PageHeader extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(welcomeUsername));
         String textWelcome = welcomeUsername.getText();
         return textWelcome.substring(13);
+    }
+
+    public ArrayList<String> getNomColonnes (WebDriverWait wait){
+        String xpath = "//div[@class=\"clickable-rows z-grid\"]//tr[@class=\"z-columns\"]/th";
+        List<WebElement> element = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpath)));
+
+        ArrayList<String> col = new ArrayList<String>();
+        for (WebElement i : element){
+            col.add(i.getText());
+        }
+        return col;
     }
 
     // méthode
