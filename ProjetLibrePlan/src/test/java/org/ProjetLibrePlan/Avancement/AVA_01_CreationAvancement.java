@@ -58,14 +58,3 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         pageAvancement.creerAvancement(wait);
     }
 }
-
-
-//th[contains(@class, "z-column-sort")]/div/text()/ancestor::tbody/descendant::div/text()
-
-//th[contains(@class, "z-column")]/div/text()
-
-//tr[contains(@id,"r6kAr5")]/th/div/text()
-
-//div[@class="clickable-rows z-grid"]
-
-//div[@class="clickable-rows z-grid"]//tr[@class="z-columns"]/th
