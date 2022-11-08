@@ -54,6 +54,8 @@ public class PageAvancement extends PageHeader {
     @FindBy(xpath = "//td[contains(text(), \"Annuler\")]")
     WebElement boutonAnnuler;
 
+    @FindBy(xpath = "//span[contains(text(),\"enregistré\")]")
+    WebElement messageEnregistrement;
 
     // ********** Methodes ************ //
     public boolean displayTitle(WebDriverWait wait){
@@ -138,6 +140,12 @@ public class PageAvancement extends PageHeader {
         tools.setValue(wait, fieldPrecision, precision);
         tools.setCheckbox(wait, checkboxPourcentage, checkPourcentage);
         tools.clickElement(wait, boutonEnregistrer);
+    }
+
+    // message enregistrement
+    public String getMessageEnregistrement(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(messageEnregistrement));
+        return messageEnregistrement.getText();
     }
 
 }

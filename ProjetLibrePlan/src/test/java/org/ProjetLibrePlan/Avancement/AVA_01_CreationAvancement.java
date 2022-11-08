@@ -106,5 +106,11 @@ public class AVA_01_CreationAvancement extends AbstractTest {
                 propertyParam.getProperty("valeurMax"),
                 propertyParam.getProperty("defautPrecision"),
                 Boolean.parseBoolean(propertyParam.getProperty("checkPourcentage")));
+        Thread.sleep(3000);
+        LOGGER.info("Vérifier que le message d'enregistrement est affiché");
+        assertEquals("Le message d'enregistrement est conforme",
+                "Type d'avancement \"" + propertyParam.getProperty("nomUnite_1") + "\" enregistré",
+                pageAvancement.getMessageEnregistrement(wait));
+
     }
 }
