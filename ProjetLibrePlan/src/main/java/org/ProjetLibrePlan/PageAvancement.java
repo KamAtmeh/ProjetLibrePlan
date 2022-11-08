@@ -33,6 +33,11 @@ public class PageAvancement extends PageHeader {
         return pageTitle.isDisplayed();
     }
 
+    public boolean displayCreer(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(boutonCreer));
+        return boutonCreer.isDisplayed();
+    }
+
     // Créer un type d'avancement
     public void creerAvancement(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonCreer);

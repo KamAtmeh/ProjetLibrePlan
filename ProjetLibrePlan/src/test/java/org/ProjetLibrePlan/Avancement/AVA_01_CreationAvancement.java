@@ -24,6 +24,17 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         }
     };
 
+    ArrayList<String> expectedChampsAvancement = new ArrayList<String>() {
+        {
+            add("Nom d'unité");
+            add("Actif");
+            add("Valeur maximum par défaut");
+            add("Précision");
+            add("Type");
+            add("Pourcentage");
+        }
+    };
+
 
     // initiate parameters
     String pathProperties = "src/test/resources/database/testLibrePlan.properties";
@@ -54,7 +65,13 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         PageAvancement pageAvancement = pagePlanification.clickOption(wait, "Ressources", "Types d'avancement", PageAvancement.class);
         LOGGER.info("Vérification des noms des colonnes de la table");
         assertEquals("Noms des colonnes ne sont pas corrects", expectedColsAvancement, pageAvancement.getNomColonnes(wait));
+        LOGGER.info("Vérification de la présence du bouton Créer");
+        pageAvancement.displayCreer(wait);
         LOGGER.info("Création d'un type d'avancement");
         pageAvancement.creerAvancement(wait);
+        LOGGER.info("Vérification des noms des champs du formulaire");
+        assertEquals("Noms des champs du formulaire ne sont pas corrects", expectedChampsAvancement, pageAvancement.getNomChamps(wait));
+
     }
 }
+

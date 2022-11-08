@@ -56,6 +56,19 @@ public class PageHeader extends AbstractPage {
         return col;
     }
 
+    public ArrayList<String> getNomChamps (WebDriverWait wait){
+        String xpath = "(//tbody[@class=\"z-rows\"])[2]/child::tr[not(contains(@style, \"none\"))]/td[1]//span";
+        List<WebElement> element = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpath)));
+
+        ArrayList<String> row = new ArrayList<String>();
+        for (WebElement i : element){
+            row.add(i.getText());
+        }
+        return row;
+    }
+
+
+
     // méthode
     public <T> T clickOption(WebDriverWait wait, String menu, String option, Class<T> className) throws Throwable {
         Actions action = new Actions(driver);
