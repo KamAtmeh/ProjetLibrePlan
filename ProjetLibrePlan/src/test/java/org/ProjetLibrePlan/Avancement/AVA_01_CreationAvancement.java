@@ -11,8 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AVA_01_CreationAvancement extends AbstractTest {
 
@@ -77,7 +76,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Vérification de la présence du bouton Créer");
         pageAvancement.displayCreer(wait);
         LOGGER.info("Création d'un type d'avancement");
-        pageAvancement.creerAvancement(wait);
+        pageAvancement.clickCreerAvancement(wait);
         LOGGER.info("Vérification des noms des champs du formulaire");
         assertEquals("Noms des champs du formulaire ne sont pas corrects", expectedChampsAvancement, pageAvancement.getNomChamps(wait));
         LOGGER.info("Vérification que le champ Nom d'unité est vide");
@@ -88,6 +87,24 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertEquals("Valeur par défaut de Valeur n'est pas 100,00", propertyParam.getProperty("defautValeur"), pageAvancement.getValeurDefaut(wait));
         LOGGER.info("Vérification que la valeur par défaut du champ Précision est 0,1000");
         assertEquals("Valeur par défaut de Precision n'est pas 0,1000", propertyParam.getProperty("defautPrecision"), pageAvancement.getPrecisionDefaut(wait));
+        LOGGER.info("Vérification que la valeur de Type est User");
+        assertEquals("Valeur par défaut de Type n'est pas User", propertyParam.getProperty("defautType"), pageAvancement.getTypeDefaut(wait));
+        LOGGER.info("Vérification que la valeur de Type n'est pas modifiable");
+        assertFalse("Valeur de Type n'est pas modifiable", pageAvancement.isModifiableType(wait));
+        LOGGER.info("Vérification que la case pourcentage n'est pas cochée");
+        assertFalse("Case pourcentage est cochée par défaut", pageAvancement.isCheckedPourcentage(wait));
+        LOGGER.info("Vérification de la présence des boutons enregistrer, sauver et continuer");
+        assertTrue("Bouton enregistrer n'est pas visible", pageAvancement.isDisplayEnregister(wait));
+        assertTrue("Bouton sauver n'est pas visible", pageAvancement.isDisplaySauver(wait));
+        assertTrue("Bouton annuler n'est pas visible", pageAvancement.isDisplayAnnuler(wait));
 
+        LOGGER.info("******************************* CREATION ET VERIFICATION TYPE AVANCEMENT *******************************");
+        LOGGER.info("Créer un type d'avancement");
+        pageAvancement.creerAvancement(wait,
+                propertyParam.getProperty("nomUnite_1"),
+                Boolean.parseBoolean(propertyParam.getProperty("checkActif")),
+                propertyParam.getProperty("valeurMax"),
+                propertyParam.getProperty("defautPrecision"),
+                Boolean.parseBoolean(propertyParam.getProperty("checkPourcentage")));
     }
 }

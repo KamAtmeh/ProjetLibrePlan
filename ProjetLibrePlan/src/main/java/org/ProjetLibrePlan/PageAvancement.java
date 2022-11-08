@@ -40,7 +40,7 @@ public class PageAvancement extends PageHeader {
     WebElement fieldPrecision;
 
     @FindBy(xpath = "(//span[text()=\"Type\"]/ancestor::tr//span)[2]")
-    WebElement fieldUser;
+    WebElement fieldType;
 
     @FindBy(xpath = "//span[contains(text(), \"Pourcentage\")]/ancestor::tr//input[@type=\"checkbox\"]")
     WebElement checkboxPourcentage;
@@ -67,7 +67,7 @@ public class PageAvancement extends PageHeader {
     }
 
     // Créer un type d'avancement
-    public void creerAvancement(WebDriverWait wait) throws Throwable {
+    public void clickCreerAvancement(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonCreer);
     }
 
@@ -95,6 +95,49 @@ public class PageAvancement extends PageHeader {
         return fieldPrecision.getAttribute("value");
     }
 
-//    Type : Valeur non modifiable "User"
-//    Pourcentage : case à cocher décochée par défaut
+    // Type par défaut
+    public String getTypeDefaut(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(fieldType));
+        return fieldType.getText();
+    }
+
+    public boolean isModifiableType(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(fieldType));
+        return tools.isModifiable(wait, fieldType);
+    }
+
+    // Pourcentage
+    public boolean isCheckedPourcentage(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(checkboxPourcentage));
+        return checkboxPourcentage.isSelected();
+    }
+
+    // boutons Enregistrer
+    public boolean isDisplayEnregister(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(boutonEnregistrer));
+        return boutonEnregistrer.isDisplayed();
+    }
+
+    // boutons Sauver
+    public boolean isDisplaySauver(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(boutonSauver));
+        return boutonSauver.isDisplayed();
+    }
+
+    // boutons Sauver
+    public boolean isDisplayAnnuler(WebDriverWait wait){
+        wait.until(ExpectedConditions.visibilityOf(boutonAnnuler));
+        return boutonAnnuler.isDisplayed();
+    }
+
+    // créer un type d'avancement
+    public void creerAvancement(WebDriverWait wait, String nomUnite, boolean checkActif, String valeurMax, String precision, boolean checkPourcentage) throws Throwable {
+        tools.setValue(wait, fieldNomUnite, nomUnite);
+        tools.setCheckbox(wait, checkboxActif, checkActif);
+        tools.setValue(wait, fieldValeurMaximum, valeurMax);
+        tools.setValue(wait, fieldPrecision, precision);
+        tools.setCheckbox(wait, checkboxPourcentage, checkPourcentage);
+        tools.clickElement(wait, boutonEnregistrer);
+    }
+
 }
