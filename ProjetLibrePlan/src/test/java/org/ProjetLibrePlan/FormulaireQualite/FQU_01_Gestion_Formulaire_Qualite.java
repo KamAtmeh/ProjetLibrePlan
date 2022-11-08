@@ -42,7 +42,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         PageHeader pageHeader = new PageHeader(driver);
 
         //Passage de la souris sur l'ongle Ressources et clique sur sous-categorie Formulaire de qualite
-        pageHeader.clickOption(wait, propertyParam.getProperty("menu"), propertyParam.getProperty("opton"), PageFormulaireQualite.class);
+        pageHeader.clickOption(wait, propertyParam.getProperty("menu"), propertyParam.getProperty("option"), PageFormulaireQualite.class);
         LOGGER.info("Accès à la page Formulaire qualité");
 
         //Initialisation de pageFormulairequalite et assertion qu'on est bien sur la bonne page
