@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
@@ -31,34 +32,34 @@ public class PageListeFormulaireQualite extends PageHeader {
     public WebElement boutonSupprimerFormulaire;
 
 
-    public PageCreerFormulaireQualite clickBoutonCreerFormulaireQualite() {
-        creerUnFormulaireQualité.click();
+    public PageCreerFormulaireQualite clickBoutonCreerFormulaireQualite(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,creerUnFormulaireQualité);
         return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
     }
 
 
-    public void faireUneRechercheFormulaire(String formulairename) {
+    public void faireUneRechercheFormulaire(String formulairename, WebDriverWait wait) throws Throwable {
         //inserer nom du formulaire qu'on recherche
-        champRechercheFormulaire.click();
-        champRechercheFormulaire.sendKeys(formulairename);
+        tools.clickElement(wait,champRechercheFormulaire);
+        LOGGER.info("Rerchercher formulaire par nom");
+        tools.setValue(wait,champRechercheFormulaire,formulairename);
         assertEquals(formulairename, champRechercheFormulaire.getText());
         //lancer la recherhce
-        boutonRechercheFormulaire.click();
+        tools.clickElement(wait,boutonRechercheFormulaire);
     }
 
-    public PageCreerFormulaireQualite clickBoutonModifierFormulaire() {
-        boutonModifierFormulaire.click();
+    public PageCreerFormulaireQualite clickBoutonModifierFormulaire(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonModifierFormulaire);
         return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
     }
 
-    public void supprimerFormulairesurPageListeFormulaire() {
-        boutonSupprimerFormulaire.click();
+    public void supprimerFormulairesurPageListeFormulaire(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,boutonSupprimerFormulaire);
     }
 
-    public PageCreerFormulaireQualite clickerSurNomFormulaire(String $nomformulaire) {
+    public PageCreerFormulaireQualite clickerSurNomFormulaire(WebDriverWait wait,String $nomformulaire) throws Throwable {
         WebElement nomclickable = driver.findElement(By.xpath("//span[contains (text(), '$nomformulaire')]"));
-        nomclickable.click();
-
+        tools.clickElement(wait,nomclickable);
         return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
     }
 }
