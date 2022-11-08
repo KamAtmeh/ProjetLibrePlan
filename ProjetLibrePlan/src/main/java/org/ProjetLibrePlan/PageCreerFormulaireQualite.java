@@ -46,7 +46,10 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="(//input[@class])[5]")
     public WebElement champPourcentageNouvelElementDuFormulaireQualite;
 
-    @FindBy (xpath="(//td[@class='z-button-cm']) [7]")
+    @FindBy (xpath="//span[contains(text(), '2')]")
+    public WebElement numero2position;
+
+    @FindBy (xpath="/html/body/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/div/div/div[2]/div[3]/div[1]/div[2]/div/div/div/div[2]/div/div/div[3]/table/tbody[2]/tr/td[4]/div/table/tbody/tr/td/table/tbody/tr/td[5]/span/table/tbody/tr[2]/td[2]")
     public WebElement boutonsupprimeNouvelElementduFormulaire;
 
     @FindBy (xpath="//td[contains (text(), 'Enregistrer')]")
@@ -61,7 +64,7 @@ public class PageCreerFormulaireQualite extends PageHeader {
     @FindBy (xpath="(//input[@class='z-textbox']) [2]")
     public WebElement champNompourSecondNouvelElement;
 
-    @FindBy (xpath="(//input[@class='z-decimalbox']) [1]")
+    @FindBy (xpath="(//input[@class]) [5]")
     public WebElement champPourcentageSecondNouvelElement;
 
     //Methodes

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.FileInputStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
 
@@ -63,24 +64,34 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
         assertEquals("", pagecreerformulairequalite.champNomNouvelElementDuFormulaireQualite.getText());
         assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
+        Thread.sleep(10000);
         wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire));
         pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire.click();
 
         //Creation de la première lsite d'element formulaire qualite
         pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,"Element 1","20");
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
-        assertEquals("1", pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.getText());
-        assertEquals("2", driver.findElement(By.xpath("(//span[@class='z-label'])[8]")).getText());
+        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
+        assertTrue( pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.isDisplayed());
+        assertEquals("2", pagecreerformulairequalite.numero2position.getText());
 
         //Creation de la deuxieme liste d'element formulaire qualite
         pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait,"Element 2", "40");
 
-        //
+        //Verification que Element1 reprend bien la position 1 dans la liste par screenshot
+        wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
+        tools.takeSnapShot(driver,"VerificationReprisePositionElement1");
+
+        //Cliquer sur bouton 'sauver' et voir si message apparait bien et si titre de la page est bien Formulaire Test1
+        pagecreerformulairequalite.sauvegarder(wait);
+        assertTrue(driver.findElement(By.xpath("//span[contains(text(),'Formulaire qualité ')] [1]")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Modifier Formulaire qualité: Test1')] ")).isDisplayed());
 
 
 
 
-        //creatio de
+
+
 
 
 
