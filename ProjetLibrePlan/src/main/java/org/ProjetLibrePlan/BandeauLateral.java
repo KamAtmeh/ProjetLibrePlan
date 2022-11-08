@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
-public class BandeauLaterale extends PageHeader {
+public class BandeauLateral extends PageHeader {
 
 
-    public BandeauLaterale(WebDriver driver) {
+    public BandeauLateral(WebDriver driver) {
         super(driver);
     }
 
