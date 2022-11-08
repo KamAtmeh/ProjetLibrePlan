@@ -14,6 +14,9 @@ public class PageCategorieCout extends PageHeader{
     @FindBy(xpath="//td[contains(text(), 'Créer')")
     WebElement boutonCréerCategorieCout;
 
+    @FindBy (xpath = "//span[contains(text(),\"Catégorie de coût \")]")
+    WebElement messageAffichéAEnregistrementCategorieCOut;
+
     public PageCreeCategorieCout creerUneCategorieDeCout (WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonCréerCategorieCout);
         return PageFactory.initElements (driver, PageCreeCategorieCout.class);

@@ -30,6 +30,34 @@ public class PageCreeCategorieCout extends PageHeader{
         driver.findElement(By.xpath( "//option[contains (text(), 'nomHeure')]"));
     }
 
+    @FindBy (xpath="//input[@class='z-decimalbox']")
+    WebElement champCoutHoraire;
+
+    @FindBy (xpath="'//input[@class='z-datebox-inp']) [1]")
+            WebElement champDateDebutCategorieCout;
+
+    @FindBy (xpath= "'//input[@class='z-datebox-inp']) [2]")
+    WebElement champDateFinCategorieCout;
+
+    @FindBy (xpath="(//td[@class='z-button-cm']) [4]" )
+    WebElement boutonSupprimerLigneCoutDesHeures;
+
+    @FindBy (xpath="//td[contains(text(), 'Enregistrer')]")
+    WebElement boutonEnregistrerCategorieCout;
+
+    @FindBy (xpath="//td[contains(text(), 'Sauver et continuer')]")
+    WebElement boutonSauverCategorieCout;
+
+    @FindBy (xpath = "//td[contains(text(), 'Annuler')]")
+    WebElement boutonAnnulerCategorieCout;
+
+    @FindBy (xpath ="(//span[contains(text(),'Etes-vous sûr de vouloir supprimer ce coût horaire ?')])[2]")
+    WebElement messageQuandOnvaSupprimerUneNouvelleLigneCout;
+
+
+
+
+
 
 
 }
