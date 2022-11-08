@@ -13,12 +13,14 @@ public class PageListeHeure extends PageHeader {
     @FindBy (xpath = "//td[contains(text(), 'Créer')]")
     public WebElement boutoncCreeListeHeure;
 
-    @FindBy (xpath = "(//span[@class='z-label']) [2]")
+    @FindBy (xpath = "(//span[@class='z-label']) [3]")
     public WebElement Nomclickable;
 
     @FindBy (xpath = "(//span[@class='z-label']) [3]")
     public WebElement Prixclickable;
 
+    @FindBy (xpath="(//span[@class='z-label']) [2]")
+    public WebElement Codeclickable;
 
     public PageCreeHeure creerPageCreeHeure (){
         boutoncCreeListeHeure.click();;
@@ -34,6 +36,12 @@ public class PageListeHeure extends PageHeader {
        Prixclickable.click();;
         return PageFactory.initElements(driver, PageCreeHeure.class);
     }
+
+    public PageCreeHeure cliquerCode (){
+        Codeclickable.click();;
+        return PageFactory.initElements(driver, PageCreeHeure.class);
+    }
+
 
 
 
