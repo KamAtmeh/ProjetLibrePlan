@@ -33,6 +33,14 @@ public class GenTools extends Logging {
         element.sendKeys(string);
     }
 
+    public void setCheckbox(WebDriverWait wait, WebElement element, Boolean checked) throws Throwable {
+        if(checked && element.isSelected()){
+            clickElement(wait, element);
+        } else if (!checked && element.isSelected()) {
+            clickElement(wait, element);
+        }
+    }
+
     // take screenshot of webpage and stock it in folder
     public void takeSnapShot(WebDriver driver , String fileName) throws Exception{
         //Convert web driver object to TakeScreenshot
