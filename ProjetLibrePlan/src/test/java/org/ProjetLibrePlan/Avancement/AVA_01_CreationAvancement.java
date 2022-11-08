@@ -9,8 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AVA_01_CreationAvancement extends AbstractTest {
 
@@ -57,12 +59,19 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         driver.get("http://localhost:8080/libreplan/");
 
         // initialize login page
+        LOGGER.info("******************************* INITIALISATION ET CONNEXION AU SITE *******************************");
         LOGGER.info("Initialisation du driver à la page login");
         PageLogin pageLogin = new PageLogin(driver);
         LOGGER.info("Connexion au site");
         PagePlanification pagePlanification = pageLogin.seConnecter(wait, propertyParam.getProperty("login"), propertyParam.getProperty("pwd"));
+        LOGGER.info("Vérification que l'onglet Calendrier est actif");
+        pagePlanification.displayCalendrierActif(wait);
+
+        LOGGER.info("******************************* CHOIX DE MENU *******************************");
         LOGGER.info("Clique sur le menu Ressources et choix Type d'avancement");
         PageAvancement pageAvancement = pagePlanification.clickOption(wait, "Ressources", "Types d'avancement", PageAvancement.class);
+
+        LOGGER.info("******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************");
         LOGGER.info("Vérification des noms des colonnes de la table");
         assertEquals("Noms des colonnes ne sont pas corrects", expectedColsAvancement, pageAvancement.getNomColonnes(wait));
         LOGGER.info("Vérification de la présence du bouton Créer");
@@ -71,18 +80,14 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         pageAvancement.creerAvancement(wait);
         LOGGER.info("Vérification des noms des champs du formulaire");
         assertEquals("Noms des champs du formulaire ne sont pas corrects", expectedChampsAvancement, pageAvancement.getNomChamps(wait));
+        LOGGER.info("Vérification que le champ Nom d'unité est vide");
+        assertEquals("Champ Nom d'unité n'est pas vide", propertyParam.getProperty("defautNomUnite"), pageAvancement.getNomUnite(wait));
+        LOGGER.info("Vérification que la case Actif est cochée");
+        assertTrue("Case actif n'est pas cochée par défaut", pageAvancement.isCheckedActif(wait));
+        LOGGER.info("Vérification que la valeur par défaut du champ Valeur est 100,00");
+        assertEquals("Valeur par défaut de Valeur n'est pas 100,00", propertyParam.getProperty("defautValeur"), pageAvancement.getValeurDefaut(wait));
+        LOGGER.info("Vérification que la valeur par défaut du champ Précision est 0,1000");
+        assertEquals("Valeur par défaut de Precision n'est pas 0,1000", propertyParam.getProperty("defautPrecision"), pageAvancement.getPrecisionDefaut(wait));
 
     }
 }
-
-//td[contains(@class, "current-section")]//button[contains(text(), "Calendrier")]
-
-//span[contains(text(), "Actif")]/ancestor::tr//input[@type="checkbox"]
-
-//span[contains(text(), "Pourcentage")]/ancestor::tr//input[@type="checkbox"]
-
-//span[contains(text(), "Valeur")]/ancestor::tr//input[@type="text"]
-
-//span[contains(text(), "Précision")]/ancestor::tr//input[@type="text"]
-
-//span[text()="Type"]/ancestor::tr//span[text()="User"]

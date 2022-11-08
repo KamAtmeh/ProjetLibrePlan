@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageLogin extends AbstractPage {
+public class
+PageLogin extends AbstractPage {
 
     public PageLogin (WebDriver driver){
         super(driver);
