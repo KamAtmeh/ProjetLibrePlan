@@ -91,10 +91,10 @@ public class PageCreeHeure extends PageHeader {
         assertEquals(prix+'€', champPrixParDéfaut.getText());
     }
 
-    public void remplirchampPrixavecMot (String prix, WebDriverWait wait) throws Throwable {
+    public void remplirchampPrixavecMot (String prixmot, WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,champPrixParDéfaut);
-        tools.setValue(wait,champPrixParDéfaut,prix);
-        assertEquals(prix+'€', champPrixParDéfaut.getText());
+        tools.setValue(wait,champPrixParDéfaut,prixmot);
+        assertEquals(prixmot+'€', champPrixParDéfaut.getText());
     }
 
     public PageHeure enregistrerHeureCree (WebDriverWait wait) throws Throwable {
