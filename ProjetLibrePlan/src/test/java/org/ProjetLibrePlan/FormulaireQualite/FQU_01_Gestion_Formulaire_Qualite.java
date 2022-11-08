@@ -42,7 +42,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         PageHeader pageHeader = new PageHeader(driver);
 
         //Passage de la souris sur l'ongle Ressources et clique sur sous-categorie Formulaire de qualite
-        pageHeader.clickOption(wait, "Ressources", "Formulaires qualité", PageFormulaireQualite.class);
+        pageHeader.clickOption(wait, propertyParam.getProperty("menu"), propertyParam.getProperty("opton"), PageFormulaireQualite.class);
         LOGGER.info("Accès à la page Formulaire qualité");
 
         //Initialisation de pageFormulairequalite et assertion qu'on est bien sur la bonne page
@@ -58,7 +58,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         wait.until(ExpectedConditions.elementToBeClickable(pagecreerformulairequalite.champDescriptionFormulaireQualite));
 
         //Entree des donnees dans le corps principal du formulaire de création de Formulaire Qualité et choix d'utiliser Pourcentage et pas Element
-        pagecreerformulairequalite.remplirChampsPrincipauxFormulaireQualitePourcentage(wait,"Test1","Test1");
+        pagecreerformulairequalite.remplirChampsPrincipauxFormulaireQualitePourcentage(wait, propertyParam.getProperty("nomformulaire"), propertyParam.getProperty("descriptionformulaire"));
 
         //Verification des champs de liste elements formulaire qualite
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
@@ -69,14 +69,14 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         pagecreerformulairequalite.boutonsupprimeNouvelElementduFormulaire.click();
 
         //Creation de la première lsite d'element formulaire qualite
-        pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,"Element 1","20");
+        pagecreerformulairequalite.remplirNouvelElementDuFormulairePourcentage(wait,propertyParam.getProperty("nvlElementname"), propertyParam.getProperty("pourcentage"));
         pagecreerformulairequalite.boutonNouvelElementDuFormulaireQualite.click();
         Thread.sleep(10000);
         assertTrue( pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite.isDisplayed());
         assertEquals("2", pagecreerformulairequalite.numero2position.getText());
 
         //Creation de la deuxieme liste d'element formulaire qualite
-        pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait,"Element 2", "40");
+        pagecreerformulairequalite.creerSecondNouvelElementDuFormulaire(wait, propertyParam.getProperty("secondnom"), propertyParam.getProperty("secondpourcentage"));
 
         //Verification que Element1 reprend bien la position 1 dans la liste par screenshot
         wait.until(ExpectedConditions.visibilityOf(pagecreerformulairequalite.numeroPositionDuNouvelElementDuFormualireQualite));
@@ -93,7 +93,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[contains(text(),'Test1')]) [2]")));
 
         //Clicker sur nom formulaire et arrivée sur page Modifier, formulaire
-        pageformulairequalite.clickerSurNomFormulaire(wait, "Test1");
+        pageformulairequalite.clickerSurNomFormulaire(wait, propertyParam.getProperty("$nomformulaire"));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//td[contains (text(), 'Modifier Formulaire qualité: Test1') ]")));
 
         //Modifier champ pourcentage en element
