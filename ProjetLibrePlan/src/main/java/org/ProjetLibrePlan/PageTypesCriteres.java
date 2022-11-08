@@ -69,7 +69,7 @@ public class PageTypesCriteres extends PageHeader {
     private WebElement description;
 
     //modif critère
-    @FindBy(xpath="//span[@title=\" Critère - Test bouton [Sauver et continuer]\"]/../../following-sibling::td//img[@src=\"/libreplan/common/img/ico_editar1.png\"]")
+    @FindBy(xpath="//span[@title=\"Critère - Test bouton [Sauver et continuer]\"]/../../following-sibling::td//img[@src=\"/libreplan/common/img/ico_editar1.png\"]")
     private WebElement boutonModif;
 
     //titres page
@@ -77,7 +77,10 @@ public class PageTypesCriteres extends PageHeader {
     private WebElement titre;
 
     //corbeille
-    @FindBy(xpath="//span[@title=\" Critère - Test bouton [Sauver et continuer]\"]/../../following-sibling::td//img[@src=\"/libreplan/common/img/ico_borrar1.png\"]")
+    @FindBy(xpath="//span[@title=\"Critère - Test bouton [Sauver et continuer]\"]")
+    private WebElement exempleCritere;
+
+    @FindBy(xpath="//span[@title=\"Critère - Test bouton [Sauver et continuer]\"]/../../following-sibling::td//img[@src=\"/libreplan/common/img/ico_borrar1.png\"]")
     private WebElement boutonSuppr;
 
     @FindBy(xpath="//div[@class=\"z-window-modal z-window-modal-shadow\"]")
@@ -90,7 +93,7 @@ public class PageTypesCriteres extends PageHeader {
     private WebElement annulSuppr;
 
     @FindBy(xpath="//div[@class=\"message_INFO\"]")
-    private WebElement confirmationSuppr;
+    private WebElement fenetreConfirm;
 
     public PageTypesCriteres(WebDriver driver) {
         super(driver);
@@ -142,6 +145,7 @@ public class PageTypesCriteres extends PageHeader {
          public boolean verifBoutonSC(WebDriverWait wait){
         wait.until(ExpectedConditions.visibilityOf(boutonSCCritere));
         return boutonSCCritere.isDisplayed();}
+
         public boolean verifBoutonAnnuler(WebDriverWait wait){
         wait.until(ExpectedConditions.visibilityOf(boutonAnnulerCritere));
         return boutonAnnulerCritere.isDisplayed();}
@@ -156,7 +160,7 @@ public class PageTypesCriteres extends PageHeader {
         description.sendKeys("Critère - Test bouton [Annuler]");
     }
         //clic Annuler puis verif Annuler pas présent
-        public void clicAnnulerCréation{
+        public void clicAnnulerCréation {
         boutonAnnulerCritere.click();
         assertEquals("Types de critères Liste", titre.getText());
         assertFalse("ok", boutonAnnulerCritere.isDisplayed());
@@ -185,13 +189,17 @@ public class PageTypesCriteres extends PageHeader {
         caseActive.isSelected();
         description.sendKeys("Critère - Test bouton [Sauver et continuer]");
     }
-    //clic sauver et continuer puis verif
+    //clic sauver et continuer puis verif, annulation et revérif (PT 7 et 8)
     public void clicSCCréation{
         boutonSCCritere.click();
         assertEquals("Modifier Type de critère: Critère - Test bouton [Sauver et continuer]", titre.getText());
         //récup xpath fenêtre d'enregistrement
-        assertTrue("ok", boutonEnregistrerCritere.isDisplayed());
-
+        assertEquals("Type de critère \"Critère - Test bouton [Sauver et continuer]\"enregistré", fenetreConfirm.getText());
+        assertTrue("ok", boutonSCCritere.isDisplayed());
+        boutonAnnulerCritere.click();
+        assertEquals("Types de critères Liste", titre.getText());
+        assertTrue("ok", exempleCritere.isDisplayed());
+    }
 
 
 
