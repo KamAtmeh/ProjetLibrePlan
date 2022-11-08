@@ -24,6 +24,7 @@ public class PageCreeProfil extends PageHeader {
         }
     }
 
+    //***Variables*****
 
     @FindBy(xpath = "//input[@class='focus-element z-textbox z-textbox-text-invalid']")
     public WebElement ChampNomProfil;
@@ -56,7 +57,7 @@ public class PageCreeProfil extends PageHeader {
     @FindBy(xpath = "//table[@class='z-button-over']")
     public WebElement infoBulleSupprimer;
 
-
+    //*****Methode***
     public PageListeProfil enregistrerProfilPageCreeProfil(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonEnregistrerProfil);
         return PageFactory.initElements(driver, PageListeProfil.class);
@@ -74,6 +75,7 @@ public class PageCreeProfil extends PageHeader {
     public void creerProfil (String name, WebDriverWait wait) throws Throwable {
         //nommer nouveau profil qu'on veut créer
         tools.clickElement(wait, ChampNomProfil);
+        LOGGER.info("Veuillez donner un nom à votre profil");
         tools.setValue(wait, ChampNomProfil, name);
         // dérouler menu déroulant des roles disponibles
         tools.clickElement(wait, menuDeroulantRole);

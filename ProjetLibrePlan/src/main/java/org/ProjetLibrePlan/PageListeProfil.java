@@ -13,6 +13,7 @@ public class PageListeProfil extends PageHeader {
         PageFactory.initElements(driver, this);
     }
 
+    //***Variable***
     @FindBy (xpath="//td[@class='z-button-cl']/following-sibling::td[contains (text(), 'Créer')]")
     public WebElement boutonCreerProfil;
 
@@ -26,7 +27,7 @@ public class PageListeProfil extends PageHeader {
 
 
 
-
+//***Méthodes**
     public PageCreeProfil creationDeProfil (WebDriverWait wait) throws Throwable {
         tools.clickElement (wait, boutonCreerProfil);
         return PageFactory.initElements(driver, PageCreeProfil.class);
