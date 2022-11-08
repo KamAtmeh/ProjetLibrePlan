@@ -75,3 +75,14 @@ public class AVA_01_CreationAvancement extends AbstractTest {
     }
 }
 
+//td[contains(@class, "current-section")]//button[contains(text(), "Calendrier")]
+
+//span[contains(text(), "Actif")]/ancestor::tr//input[@type="checkbox"]
+
+//span[contains(text(), "Pourcentage")]/ancestor::tr//input[@type="checkbox"]
+
+//span[contains(text(), "Valeur")]/ancestor::tr//input[@type="text"]
+
+//span[contains(text(), "Précision")]/ancestor::tr//input[@type="text"]
+
+//span[text()="Type"]/ancestor::tr//span[text()="User"]
