@@ -141,7 +141,6 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         pageAvancement.isEnabledValeurMax(wait);
         LOGGER.info("Sauvegarder le type d'avancement");
         pageAvancement.clickSauver(wait);
-        Thread.sleep(5000);
         LOGGER.info("Vérifier que le message d'enregistrement est affiché");
         assertEquals("Le message d'enregistrement est conforme",
                 "Type d'avancement \"" + propertyParam.getProperty("nomUnite_2") + "\" enregistré",

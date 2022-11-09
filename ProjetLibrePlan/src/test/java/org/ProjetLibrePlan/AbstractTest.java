@@ -99,7 +99,7 @@ public class AbstractTest extends Logging {
         LOGGER.info("Driver stopped");
 
 
-        LOGGER.info("************* REINITIALISATION DE LA BASE DE DONNEES *************");
+        LOGGER.info("******************************* REINITIALISATION DE LA BASE DE DONNEES *******************************");
         LOGGER.info("Connexion à la base de donnée...");
         //Getting the connection
         String mysqlUrl = "jdbc:postgresql://localhost:5432/libreplan";
