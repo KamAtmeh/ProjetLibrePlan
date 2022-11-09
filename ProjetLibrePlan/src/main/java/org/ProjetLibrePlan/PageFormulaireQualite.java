@@ -34,6 +34,9 @@ public class PageFormulaireQualite extends PageHeader {
     @FindBy(xpath = "//img[@src='/libreplan/common/img/ico_borrar1.png']/parent::*")
     public WebElement boutonSupprimerFormulaire;
 
+    @FindBy(xpath = "//td[contains(text(),'OK')]")
+    public WebElement boutonOkSupprimerFormulaire;
+
 
     public PageCreerFormulaireQualite clickBoutonCreerFormulaireQualite(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,creerUnFormulaireQualité);
@@ -58,6 +61,7 @@ public class PageFormulaireQualite extends PageHeader {
 
     public void supprimerFormulairesurPageListeFormulaire(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,boutonSupprimerFormulaire);
+        tools.clickElement(wait, boutonOkSupprimerFormulaire);
     }
 
     public PageModifierFormulaireQualite clickerSurNomFormulaire(WebDriverWait wait,String $nomformulaire) throws Throwable {
