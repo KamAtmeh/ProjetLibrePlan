@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PRO_TA_01_CreerUnProjet extends AbstractTest {
 
@@ -43,6 +44,7 @@ public class PRO_TA_01_CreerUnProjet extends AbstractTest {
         BandeauLateral bandeauLateral = new BandeauLateral(driver);
         PageCreerProjet pageCreerProjet = bandeauLateral.clickVersCreerProjet(wait);
         Thread.sleep(2000);
+        //assertTrue("Echec : Non affichage du formulaire de création d'un projet",formCreerProjet.isDisplayed);
 
         //Remplir les champs du formulaire
         LOGGER.info("clear name field and input projectName");
