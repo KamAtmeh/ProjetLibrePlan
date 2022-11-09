@@ -8,16 +8,17 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 public class Logging {
+
     public String className ;
     public static Logger LOGGER;
 
     public Logging() {
         this.className = this.getClass().getSimpleName();
         System.setProperty("logFileName", this.className);
-        LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+        LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(true);
         File file = new File("src/main/resources/log4j2.properties");
         context.setConfigLocation(file.toURI());
-        LOGGER = LoggerFactory.getLogger(className);
+        LOGGER = LoggerFactory.getLogger(this.className);
     }
 
 }

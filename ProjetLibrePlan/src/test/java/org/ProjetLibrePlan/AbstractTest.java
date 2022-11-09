@@ -34,7 +34,7 @@ public class AbstractTest extends Logging {
 
 
     // action and utils
-    protected GenTools tools = new GenTools(className);
+    protected GenTools tools = new GenTools();
     protected Properties propertyParam;
 
 

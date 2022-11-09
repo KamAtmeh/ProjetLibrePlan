@@ -8,24 +8,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.Reader;
 import java.sql.Connection;
-import java.sql.DriverManager;
 
 /* Class for defining tools that can be used in any project
 such as clear field, input value and click button
  */
 public class GenTools extends Logging {
-
-    private final String className;
-
-    public GenTools(String className){
-        this.className = className;
-    }
 
     // function to click on element after waiting
     public void clickElement(WebDriverWait wait, WebElement element) throws Throwable {
@@ -61,7 +56,7 @@ public class GenTools extends Logging {
     }
 
     // execute sql file
-    public static void executeSqlFile(Connection con, String pathSQLFile) throws Exception {
+    public void executeSqlFile(Connection con, String pathSQLFile) throws Exception {
         LOGGER.info("Initialisation du script runner...");
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
