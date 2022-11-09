@@ -27,7 +27,7 @@ public class PageModifierProfil extends PageHeader {
     public WebElement boutonAjouterRole;
 
 
-    @FindBy(xpath = "//input[@class='focus-element z-textbox']")
+    @FindBy(xpath = "(//input[@class])[2]")
     public WebElement ChampNomProfilPageModifierProfil;
 
     //***Methode****
