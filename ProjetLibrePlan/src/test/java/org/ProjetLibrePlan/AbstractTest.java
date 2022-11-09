@@ -46,7 +46,6 @@ public class AbstractTest extends Logging {
      */
 
     @Before
-//    @BeforeTest
     public void startup() {
         LOGGER.info("Setup LOGGER ...");
         System.setProperty("logFileName", this.className);
