@@ -61,19 +61,18 @@ public class GenTools extends Logging {
     }
 
     // execute sql file
-    public static void executeSqlFile(String user, String pwd, String pathSQLFile) throws Exception {
-        //Getting the connection
-        String mysqlUrl = "jdbc:postgresql://localhost:5432/libreplan";
-        Connection con = DriverManager.getConnection(mysqlUrl, user, pwd);
-        System.out.println("Connection established......");
+    public static void executeSqlFile(Connection con, String pathSQLFile) throws Exception {
+        LOGGER.info("Initialisation du script runner...");
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
+        LOGGER.info("Script runner initié");
+        LOGGER.info("Création d'un reader object");
         //Creating a reader object
         Reader reader = new BufferedReader(new FileReader(pathSQLFile));
+        LOGGER.info("Reader object créé");
+        LOGGER.info("Lecture du script SQL");
         //Running the script
         sr.runScript(reader);
-        // Closing DB Connection
-        con.close();
     }
 
     // take screenshot of webpage and stock it in folder
