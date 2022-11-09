@@ -110,7 +110,7 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
         //suppression formulaire
         pageformulairequalite.supprimerFormulairesurPageListeFormulaire(wait);
         Thread.sleep(10000);
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//td[@class='z-button-cm']) [10]")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//span[@class='z-label'])[1]")));
         LOGGER.info("Formulaire qualite supprime");
 
 
