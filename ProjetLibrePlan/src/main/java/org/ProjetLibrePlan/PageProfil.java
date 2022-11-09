@@ -28,7 +28,7 @@ public class PageProfil extends PageHeader {
     @FindBy(xpath = "//div[contains(text(),'Nom de profil')]")
     public WebElement nomDesProfilsDansListe;
 
-    @FindBy(xpath ="//span[contains(text(), 'Hed')])[2]")
+    @FindBy(xpath ="(//span[contains(text(), 'Hed')] ) [2]")
     public WebElement nomProfilTableau;
 
     @FindBy (xpath = "//div[contains(text(),'Actions')]")

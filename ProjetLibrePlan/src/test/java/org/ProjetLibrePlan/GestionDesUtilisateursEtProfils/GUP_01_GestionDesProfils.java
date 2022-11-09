@@ -93,6 +93,7 @@ public class GUP_01_GestionDesProfils extends AbstractTest {
         //enregistrer profil et verifier qu'il est bien présent dans la liste des profils et que le message qui indique son enregistremenet est présent
         pageCreeProfil.enregistrerProfilPageCreeProfil(wait);
         wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//div[@class='message_INFO']"))));
+        Thread.sleep(10000);
         assertEquals("Hed", pageProfil.nomProfilTableau.getText());
 
         //click sur colonne modification et acces à PageModifierProfil

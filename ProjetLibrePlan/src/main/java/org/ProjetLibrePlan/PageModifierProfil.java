@@ -11,7 +11,7 @@ public class PageModifierProfil extends PageHeader {
         super(driver);
     }
 
-    @FindBy(xpath = "/input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    @FindBy(xpath = "(//i)[2]")
     public WebElement menuDeroulantRole;
 
     @FindBy(xpath = "//td[contains (text(),'Enregistrer')]")
@@ -27,7 +27,7 @@ public class PageModifierProfil extends PageHeader {
     public WebElement boutonAjouterRole;
 
 
-    @FindBy(xpath = "//input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    @FindBy(xpath = "//input[@class='focus-element z-textbox']")
     public WebElement ChampNomProfilPageModifierProfil;
 
     //***Methode****
