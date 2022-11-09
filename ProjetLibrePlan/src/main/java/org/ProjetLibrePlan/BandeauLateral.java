@@ -20,7 +20,8 @@ public class BandeauLateral extends PageHeader {
     //<editor-fold desc="WebElements">
 
     //***Accès créer projet***
-    @FindBy(xpath="//span[@title='Créer un nouveau projet']")
+    //@FindBy(xpath="//span[@title='Créer un nouveau projet']")
+    @FindBy(xpath="//span[@class='planner-icon z-button']")
     WebElement accesCreerProjet;
     @FindBy(xpath="//div[text()='Créer un nouveau projet']")
     WebElement formCreerProjet;
