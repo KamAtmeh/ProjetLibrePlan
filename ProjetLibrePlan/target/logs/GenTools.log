@@ -3382,3 +3382,447 @@
 2022-11-09 00:51:33 | INFO  | 89    | AVA_01_CreationAvancement : Screenshot taken
 2022-11-09 00:51:33 | INFO  | 90    | AVA_01_CreationAvancement : Quit driver ...
 2022-11-09 00:51:34 | INFO  | 92    | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 00:56:23 | INFO  | 44    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 00:56:23 | INFO  | 46    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 00:56:23 | INFO  | 48    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 00:56:27 | INFO  | 69    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 00:56:27 | INFO  | 72    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 00:56:27 | INFO  | 74    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 00:56:27 | INFO  | 76    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 00:56:27 | INFO  | 80    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 00:56:27 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 00:56:27 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 00:56:27 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 00:56:27 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 00:56:30 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 00:56:30 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 00:56:30 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 00:56:30 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 00:56:31 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 00:56:31 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 00:56:31 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 00:56:32 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 00:56:32 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 00:56:34 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 00:56:34 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 00:56:34 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 00:56:34 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 00:56:34 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 00:56:34 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 00:56:34 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 00:56:34 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 00:56:34 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 00:56:35 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 00:56:35 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 00:56:35 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 00:56:35 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 00:56:35 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 00:56:35 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 00:56:36 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 00:56:36 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 00:56:36 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 00:56:36 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 00:56:37 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 00:56:37 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 00:56:37 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 00:56:37 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 00:56:37 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 00:56:37 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 00:56:37 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 00:56:38 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 00:56:38 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 00:56:43 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 00:56:43 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 00:56:43 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 00:56:44 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 00:56:44 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 00:56:44 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 00:56:44 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 00:56:44 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 00:56:44 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 00:56:45 | INFO  | 87    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 00:56:45 | INFO  | 89    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 00:56:45 | INFO  | 90    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 00:56:46 | INFO  | 92    | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:08:02 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:08:02 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:08:02 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:08:06 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:08:06 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:08:06 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:08:06 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:08:06 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:08:06 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:08:06 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:08:06 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:08:06 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:08:07 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:08:07 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:08:07 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:08:07 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:08:08 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:08:08 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:08:08 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:08:10 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:08:10 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:08:11 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:08:11 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:08:12 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:08:12 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:08:12 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:08:12 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:08:13 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:08:13 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:08:13 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:08:13 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:08:13 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:08:13 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:08:13 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:08:13 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:08:13 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:08:14 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:08:14 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:08:15 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:08:15 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:08:15 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:08:15 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:08:15 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:08:15 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:08:15 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:08:15 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:08:16 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:08:17 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:08:17 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:08:22 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:08:22 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:08:22 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:08:22 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:08:23 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:08:23 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:08:23 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:08:23 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:08:23 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:08:23 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:08:23 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:08:23 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:08:25 | INFO  | 113   | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:19:30 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:19:30 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:19:30 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:19:34 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:19:34 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:19:34 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:19:34 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:19:34 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:19:34 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:19:34 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:19:34 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:19:34 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:19:35 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:19:35 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:19:35 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:19:35 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:19:36 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:19:36 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:19:36 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:19:38 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:19:38 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:19:40 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:19:40 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:19:41 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:19:41 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:19:41 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:19:42 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:19:42 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:19:42 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:19:42 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:19:42 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:19:42 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:19:42 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:19:42 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:19:42 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:19:42 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:19:43 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:19:43 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:19:44 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:19:44 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:19:44 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:19:44 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:19:44 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:19:44 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:19:44 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:19:44 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:19:45 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:19:46 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:19:46 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:19:51 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:19:51 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:19:51 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:19:51 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:19:52 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:19:52 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:19:52 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:19:52 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:19:53 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:19:53 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:19:53 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:19:53 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:19:56 | INFO  | 117   | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:31:51 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:31:51 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:31:51 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:31:54 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:31:54 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:31:54 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:31:54 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:31:54 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:31:54 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:31:54 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:31:54 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:31:54 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:31:55 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:31:55 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:31:55 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:31:55 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:31:56 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:31:56 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:31:56 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:31:58 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:31:58 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:31:59 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:31:59 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:31:59 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:31:59 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:31:59 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:32:00 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:32:00 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:32:00 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:32:00 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:32:00 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:32:00 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:32:00 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:32:00 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:32:00 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:32:00 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:32:02 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:32:02 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:32:02 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:32:02 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:32:02 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:32:02 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:32:02 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:32:02 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:32:02 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:32:02 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:32:03 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:32:03 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:32:04 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:32:09 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:32:09 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:32:09 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:32:09 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:32:10 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:32:10 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:32:10 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:32:10 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:32:10 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:32:10 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:32:10 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:32:10 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:32:11 | INFO  | 119   | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:35:10 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:35:10 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:35:10 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:35:13 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:35:13 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:35:13 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:35:13 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:35:13 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:35:13 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:35:13 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:35:13 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:35:13 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:35:14 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:35:14 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:35:14 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:35:14 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:35:15 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:35:15 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:35:15 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:35:17 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:35:17 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:35:19 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:35:19 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:35:19 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:35:19 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:35:19 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:35:20 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:35:20 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:35:20 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:35:20 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:35:21 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:35:21 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:35:21 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:35:21 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:35:21 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:35:21 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:35:22 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:35:22 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:35:22 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:35:22 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:35:22 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:35:22 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:35:22 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:35:22 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:35:22 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:35:23 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:35:23 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:35:24 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:35:24 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:35:29 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:35:29 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:35:29 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:35:29 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:35:30 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:35:30 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:35:30 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:35:30 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:35:30 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:35:30 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:35:30 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:35:30 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:35:32 | INFO  | 119   | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:48:15 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:48:15 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:48:15 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:48:18 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:48:18 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:48:18 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:48:18 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:48:19 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:48:19 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:48:19 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:48:19 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:48:19 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:48:19 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:48:19 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:48:20 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:48:20 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:48:20 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:48:20 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:48:21 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:48:22 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:48:22 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:48:23 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:48:23 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:48:23 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:48:23 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:48:23 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:48:24 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:48:24 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:48:24 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:48:24 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:48:24 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:48:25 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:48:25 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:48:25 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:48:25 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:48:25 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:48:26 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:48:26 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:48:26 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:48:26 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:48:26 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:48:27 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:48:27 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:48:27 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:48:27 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:48:27 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:48:27 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:48:28 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:48:28 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:48:33 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:48:33 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:48:33 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:48:34 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:48:34 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:48:34 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:48:34 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:48:34 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:48:34 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:48:35 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:48:35 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:48:35 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:48:38 | INFO  | 115   | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:56:42 | INFO  | 51    | AVA_01_CreationAvancement : Setup LOGGER ...
+2022-11-09 02:56:42 | INFO  | 53    | AVA_01_CreationAvancement : Setup LOGGER executed
+2022-11-09 02:56:42 | INFO  | 55    | AVA_01_CreationAvancement : Launching chrome ...
+2022-11-09 02:56:45 | INFO  | 76    | AVA_01_CreationAvancement : chrome launched
+2022-11-09 02:56:45 | INFO  | 79    | AVA_01_CreationAvancement : Setup Properties ...
+2022-11-09 02:56:45 | INFO  | 81    | AVA_01_CreationAvancement : Setup properties executed
+2022-11-09 02:56:45 | INFO  | 83    | AVA_01_CreationAvancement : Setup of implicit wait and driver ...
+2022-11-09 02:56:45 | INFO  | 87    | AVA_01_CreationAvancement : Setup of implicit wait and driver executed
+2022-11-09 02:56:45 | INFO  | 49    | AVA_01_CreationAvancement : START OF TEST
+2022-11-09 02:56:45 | INFO  | 52    | AVA_01_CreationAvancement : Loading properties file ...
+2022-11-09 02:56:45 | INFO  | 54    | AVA_01_CreationAvancement : Properties file loaded
+2022-11-09 02:56:45 | INFO  | 57    | AVA_01_CreationAvancement : Lancement de la page web
+2022-11-09 02:56:47 | INFO  | 61    | AVA_01_CreationAvancement : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 02:56:47 | INFO  | 62    | AVA_01_CreationAvancement : Initialisation du driver à la page login
+2022-11-09 02:56:47 | INFO  | 64    | AVA_01_CreationAvancement : Connexion au site
+2022-11-09 02:56:47 | INFO  | 31    | PageLogin                 : Vider le champ username et ajouter le username
+2022-11-09 02:56:47 | INFO  | 35    | PageLogin                 : Vider le champ password et ajouter le password
+2022-11-09 02:56:47 | INFO  | 39    | PageLogin                 : Click on Sign In button
+2022-11-09 02:56:48 | INFO  | 66    | AVA_01_CreationAvancement : Vérification que l'onglet Calendrier est actif
+2022-11-09 02:56:50 | INFO  | 69    | AVA_01_CreationAvancement : ******************************* CHOIX DE MENU *******************************
+2022-11-09 02:56:50 | INFO  | 70    | AVA_01_CreationAvancement : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 02:56:51 | INFO  | 73    | AVA_01_CreationAvancement : ******************************* DEBUT DES VERIFICATIONS SUR LA PAGE *******************************
+2022-11-09 02:56:51 | INFO  | 74    | AVA_01_CreationAvancement : Vérification des noms des colonnes de la table
+2022-11-09 02:56:52 | INFO  | 76    | AVA_01_CreationAvancement : Vérification de la présence du bouton Créer
+2022-11-09 02:56:52 | INFO  | 78    | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:56:52 | INFO  | 80    | AVA_01_CreationAvancement : Vérification des noms des champs du formulaire
+2022-11-09 02:56:53 | INFO  | 82    | AVA_01_CreationAvancement : Vérification que le champ Nom d'unité est vide
+2022-11-09 02:56:53 | INFO  | 84    | AVA_01_CreationAvancement : Vérification que la case Actif est cochée
+2022-11-09 02:56:53 | INFO  | 86    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Valeur est 100,00
+2022-11-09 02:56:53 | INFO  | 88    | AVA_01_CreationAvancement : Vérification que la valeur par défaut du champ Précision est 0,1000
+2022-11-09 02:56:53 | INFO  | 90    | AVA_01_CreationAvancement : Vérification que la valeur de Type est User
+2022-11-09 02:56:53 | INFO  | 92    | AVA_01_CreationAvancement : Vérification que la valeur de Type n'est pas modifiable
+2022-11-09 02:56:53 | INFO  | 94    | AVA_01_CreationAvancement : Vérification que la case pourcentage n'est pas cochée
+2022-11-09 02:56:53 | INFO  | 96    | AVA_01_CreationAvancement : Vérification de la présence des boutons enregistrer, sauver et continuer
+2022-11-09 02:56:53 | INFO  | 101   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 1 *******************************
+2022-11-09 02:56:53 | INFO  | 102   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:56:54 | INFO  | 110   | AVA_01_CreationAvancement : ******************************* VERIFICATION DU TYPE AVANCEMENT *******************************
+2022-11-09 02:56:54 | INFO  | 111   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:56:55 | INFO  | 115   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:56:55 | INFO  | 117   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:56:55 | INFO  | 120   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:56:55 | INFO  | 123   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:56:55 | INFO  | 125   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:56:55 | INFO  | 128   | AVA_01_CreationAvancement : ******************************* CREATION TYPE AVANCEMENT - 2*******************************
+2022-11-09 02:56:55 | INFO  | 129   | AVA_01_CreationAvancement : Clique sur le bouton créer d'un type d'avancement
+2022-11-09 02:56:55 | INFO  | 131   | AVA_01_CreationAvancement : Vérifier l'affichage du titre de la page
+2022-11-09 02:56:56 | INFO  | 133   | AVA_01_CreationAvancement : Créer un type d'avancement
+2022-11-09 02:56:57 | INFO  | 140   | AVA_01_CreationAvancement : Vérifier que la case Valeur maximum est désactivée
+2022-11-09 02:56:57 | INFO  | 142   | AVA_01_CreationAvancement : Sauvegarder le type d'avancement
+2022-11-09 02:57:02 | INFO  | 145   | AVA_01_CreationAvancement : Vérifier que le message d'enregistrement est affiché
+2022-11-09 02:57:02 | INFO  | 149   | AVA_01_CreationAvancement : Vérifier titre de la page après sauvegarde
+2022-11-09 02:57:02 | INFO  | 152   | AVA_01_CreationAvancement : Clique sur le bouton annuler
+2022-11-09 02:57:02 | INFO  | 154   | AVA_01_CreationAvancement : Vérifier retour sur la page Types d'avancement Liste
+2022-11-09 02:57:03 | INFO  | 156   | AVA_01_CreationAvancement : Vérification que le nouveau type d'avancement est dans la table
+2022-11-09 02:57:03 | INFO  | 158   | AVA_01_CreationAvancement : Vérification de l'état activé du nouveau type d'avancement
+2022-11-09 02:57:03 | INFO  | 161   | AVA_01_CreationAvancement : Vérification de l'état prédéfini du nouveau type d'avancement
+2022-11-09 02:57:03 | INFO  | 164   | AVA_01_CreationAvancement : Vérification de la présence du bouton Modifier
+2022-11-09 02:57:03 | INFO  | 166   | AVA_01_CreationAvancement : Vérification de la présence du bouton Supprimer
+2022-11-09 02:57:03 | INFO  | 94    | AVA_01_CreationAvancement : Take screenshot of last page ...
+2022-11-09 02:57:03 | INFO  | 96    | AVA_01_CreationAvancement : Screenshot taken
+2022-11-09 02:57:03 | INFO  | 97    | AVA_01_CreationAvancement : Quit driver ...
+2022-11-09 02:57:04 | INFO  | 99    | AVA_01_CreationAvancement : Driver stopped
+2022-11-09 02:57:04 | INFO  | 100   | AVA_01_CreationAvancement : Connexion à la base de donnée...
+2022-11-09 02:57:04 | INFO  | 104   | AVA_01_CreationAvancement : Connexion établie
+2022-11-09 02:57:04 | INFO  | 105   | AVA_01_CreationAvancement : Initiation du query SQL...
+2022-11-09 02:57:04 | INFO  | 107   | AVA_01_CreationAvancement : Query inité
+2022-11-09 02:57:04 | INFO  | 108   | AVA_01_CreationAvancement : Drop du schema de la base de donnée
+2022-11-09 02:57:05 | INFO  | 110   | AVA_01_CreationAvancement : Drop exécuté
+2022-11-09 02:57:05 | INFO  | 111   | AVA_01_CreationAvancement : Réinitialisation de la base de donnée
+2022-11-09 02:57:07 | INFO  | 120   | AVA_01_CreationAvancement : Réinitialisation effectuée
+2022-11-09 02:57:07 | INFO  | 121   | AVA_01_CreationAvancement : Fermeture de la connexion à la base de donnée
+2022-11-09 02:57:07 | INFO  | 124   | AVA_01_CreationAvancement : Déconnexion de la base de donnée
