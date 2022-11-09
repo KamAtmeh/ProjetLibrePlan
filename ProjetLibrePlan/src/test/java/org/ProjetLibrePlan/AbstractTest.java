@@ -97,26 +97,26 @@ public class AbstractTest extends Logging {
         LOGGER.info("Quit driver ...");
         driver.quit();
         LOGGER.info("Driver stopped");
-//        LOGGER.info("************* REINITIALISATION DE LA BASE DE DONNEES *************");
-//        LOGGER.info("Connexion à la base de donnée...");
-//        //Getting the connection
-//        String mysqlUrl = "jdbc:postgresql://localhost:5432/libreplan";
-//        Connection con = DriverManager.getConnection(mysqlUrl, "postgres", "eql");
-//        LOGGER.info("Connexion établie");
-//        LOGGER.info("Initiation du query SQL...");
-//        Statement st = con.createStatement();
-//        LOGGER.info("Query inité");
-//        LOGGER.info("Drop du schema de la base de donnée");
-//        st.execute("DROP SCHEMA public CASCADE;");
-//        LOGGER.info("Drop exécuté");
-//        LOGGER.info("Réinitialisation de la base de donnée");
-//        tools.executeSqlFile(con, "src/test/resources/database/backupSchemaLibrePlan.sql");
-//        tools.executeSqlFile(con, "src/test/resources/database/backupDataLibrePlan.sql");
-//        LOGGER.info("Réinitialisation effectuée");
-//        // Closing DB Connection
-//        LOGGER.info("Fermeture de la connexion à la base de donnée");
-//        con.close();
-//        LOGGER.info("Déconnexion de la base de donnée");
+        LOGGER.info("************* REINITIALISATION DE LA BASE DE DONNEES *************");
+        LOGGER.info("Connexion à la base de donnée...");
+        //Getting the connection
+        String mysqlUrl = "jdbc:postgresql://localhost:5432/libreplan";
+        Connection con = DriverManager.getConnection(mysqlUrl, "postgres", "admin");
+        LOGGER.info("Connexion établie");
+        LOGGER.info("Initiation du query SQL...");
+        Statement st = con.createStatement();
+        LOGGER.info("Query inité");
+        LOGGER.info("Drop du schema de la base de donnée");
+        st.execute("DROP SCHEMA public CASCADE;");
+        LOGGER.info("Drop exécuté");
+        LOGGER.info("Réinitialisation de la base de donnée");
+        tools.executeSqlFile(con, "src/test/resources/database/backupSchemaLibrePlan.sql");
+        tools.executeSqlFile(con, "src/test/resources/database/backupDataLibrePlan.sql");
+        LOGGER.info("Réinitialisation effectuée");
+        // Closing DB Connection
+        LOGGER.info("Fermeture de la connexion à la base de donnée");
+        con.close();
+        LOGGER.info("Déconnexion de la base de donnée");
 
     }
 }
