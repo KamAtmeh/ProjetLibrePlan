@@ -22,6 +22,13 @@ such as clear field, input value and click button
  */
 public class GenTools extends Logging {
 
+    private final String className;
+
+    public GenTools(String className) {
+        this.className = className;
+    }
+
+
     // function to click on element after waiting
     public void clickElement(WebDriverWait wait, WebElement element) throws Throwable {
         wait.until(ExpectedConditions.visibilityOf(element));

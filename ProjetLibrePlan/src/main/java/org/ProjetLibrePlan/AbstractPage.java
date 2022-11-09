@@ -11,7 +11,7 @@ public class AbstractPage extends Logging {
     WebDriver driver;
 
     // ***** Objects ***** //
-    GenTools tools = new GenTools();
+    GenTools tools = new GenTools(this.className);
 
     // ***** Constructeur ***** //
     public AbstractPage (WebDriver driver){
