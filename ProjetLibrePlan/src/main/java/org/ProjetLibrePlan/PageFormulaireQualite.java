@@ -25,6 +25,9 @@ public class PageFormulaireQualite extends PageHeader {
     @FindBy(xpath = "//td[contains (text(), 'Filtre')]")
     public WebElement boutonRechercheFormulaire;
 
+    @FindBy(xpath ="(//span[contains(text(),'Test1')]) [2]")
+    public WebElement champNomClickable;
+
     @FindBy(xpath = "//img[@src='/libreplan/common/img/ico_editar1.png']/parent::*")
     public WebElement boutonModifierFormulaire;
 
@@ -57,11 +60,13 @@ public class PageFormulaireQualite extends PageHeader {
         tools.clickElement(wait,boutonSupprimerFormulaire);
     }
 
-    public PageCreerFormulaireQualite clickerSurNomFormulaire(WebDriverWait wait,String $nomformulaire) throws Throwable {
-        WebElement nomclickable = driver.findElement(By.xpath("//span[contains (text(), '$nomformulaire')]"));
+    public PageModifierFormulaireQualite clickerSurNomFormulaire(WebDriverWait wait,String $nomformulaire) throws Throwable {
+        WebElement nomclickable = driver.findElement(By.xpath("(//span[contains (text(), 'Test1')])[2]"));
         tools.clickElement(wait,nomclickable);
-        return PageFactory.initElements(driver, PageCreerFormulaireQualite.class);
+        return PageFactory.initElements(driver, PageModifierFormulaireQualite.class);
     }
+
+
 }
 
 

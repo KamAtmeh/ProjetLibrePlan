@@ -9,7 +9,7 @@ import java.io.File;
 
 public class Logging {
     public String className ;
-    public Logger LOGGER;
+    public static Logger LOGGER;
 
     public Logging() {
         this.className = this.getClass().getSimpleName();

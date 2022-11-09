@@ -1,13 +1,20 @@
 package utils;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.ibatis.jdbc.ScriptRunner;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 /* Class for defining tools that can be used in any project
 such as clear field, input value and click button
@@ -34,11 +41,38 @@ public class GenTools extends Logging {
     }
 
     public void setCheckbox(WebDriverWait wait, WebElement element, Boolean checked) throws Throwable {
-        if(checked && element.isSelected()){
+        if(checked == true && !(element.isSelected())){
             clickElement(wait, element);
-        } else if (!checked && element.isSelected()) {
+        } else if (checked == false && element.isSelected()) {
             clickElement(wait, element);
         }
+    }
+
+    public boolean isModifiable(WebDriverWait wait, WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        String tag = element.getTagName();
+        if(tag != "input"){
+            return false;
+        } else if (tag == "input" && !(element.isEnabled())){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // execute sql file
+    public static void executeSqlFile(Connection con, String pathSQLFile) throws Exception {
+        LOGGER.info("Initialisation du script runner...");
+        //Initialize the script runner
+        ScriptRunner sr = new ScriptRunner(con);
+        LOGGER.info("Script runner initié");
+        LOGGER.info("Création d'un reader object");
+        //Creating a reader object
+        Reader reader = new BufferedReader(new FileReader(pathSQLFile));
+        LOGGER.info("Reader object créé");
+        LOGGER.info("Lecture du script SQL");
+        //Running the script
+        sr.runScript(reader);
     }
 
     // take screenshot of webpage and stock it in folder
