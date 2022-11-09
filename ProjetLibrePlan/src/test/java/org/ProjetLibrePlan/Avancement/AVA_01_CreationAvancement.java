@@ -125,7 +125,7 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         LOGGER.info("Vérification de la présence du bouton Supprimer");
         assertTrue("Bouton Supprimer n'est pas présent", pageAvancement.isDisplaySupprimer(wait, propertyParam.getProperty("nomUnite_1")));
 
-        LOGGER.info("******************************* CREATION TYPE AVANCEMENT - 2*******************************");
+        LOGGER.info("******************************* CREATION TYPE AVANCEMENT - 2 *******************************");
         LOGGER.info("Clique sur le bouton créer d'un type d'avancement");
         pageAvancement.clickCreerAvancement(wait);
         LOGGER.info("Vérifier l'affichage du titre de la page");
@@ -165,5 +165,6 @@ public class AVA_01_CreationAvancement extends AbstractTest {
         assertTrue("Bouton Modifier n'est pas présent", pageAvancement.isDisplayModifier(wait, propertyParam.getProperty("nomUnite_2")));
         LOGGER.info("Vérification de la présence du bouton Supprimer");
         assertTrue("Bouton Supprimer n'est pas présent", pageAvancement.isDisplaySupprimer(wait, propertyParam.getProperty("nomUnite_2")));
+        LOGGER.info("******************************* FIN DU TEST *******************************");
     }
 }
