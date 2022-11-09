@@ -25,17 +25,26 @@ public class PageProfil extends PageHeader {
     @FindBy (xpath="(//td[@class='z-button-cm']) [3]")
     public WebElement boutonSupprimerProfilQuiAEteCree;
 
+    @FindBy(xpath = "//div[contains(text(),'Nom de profil')]")
+    public WebElement nomDesProfilsDansListe;
+
+    @FindBy(xpath ="//span[contains(text(), 'Hed')])[2]")
+    public WebElement nomProfilTableau;
+
+    @FindBy (xpath = "//div[contains(text(),'Actions')]")
+    public WebElement actionsSurPageProfils;
 
 
-//***Méthodes**
+
+    //***Méthodes**
     public PageCreeProfil creationDeProfil (WebDriverWait wait) throws Throwable {
         tools.clickElement (wait, boutonCreerProfil);
         return PageFactory.initElements(driver, PageCreeProfil.class);
     }
 
-    public PageCreeProfil modificationProfil(WebDriverWait wait) throws Throwable {
+    public PageModifierProfil modificationProfil(WebDriverWait wait) throws Throwable {
         tools.clickElement(wait, boutonmodifierProfilQuiAEteCree);
-        return PageFactory.initElements(driver, PageCreeProfil.class);
+        return PageFactory.initElements(driver, PageModifierProfil.class);
 
     }
 

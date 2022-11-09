@@ -26,10 +26,10 @@ public class PageCreeProfil extends PageHeader {
 
     //***Variables*****
 
-    @FindBy(xpath = "//input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    @FindBy(xpath = "(//input[@class])[2]")
     public WebElement ChampNomProfil;
 
-    @FindBy(xpath = "/input[@class='focus-element z-textbox z-textbox-text-invalid']")
+    @FindBy(xpath = ("(//i)[2]"))
     public WebElement menuDeroulantRole;
 
     @FindBy(xpath = "//td[contains (text(),'Participants')]")
@@ -54,8 +54,26 @@ public class PageCreeProfil extends PageHeader {
     @FindBy(xpath = "(//img[@src='/libreplan/common/img/ico_borrar1.png']/parent::*) [7]")
     public WebElement boutonSupprimerRole2;
 
-    @FindBy(xpath = "//table[@class='z-button-over']")
+    @FindBy(xpath = "//*[@id='d9EPt4-box'']/tbody/tr[2]/td[2]/img")
     public WebElement infoBulleSupprimer;
+
+    @FindBy(xpath="//span[contains(text(),'Nom')]")
+    public WebElement texteNomPageCreeeProfil;
+
+    @FindBy (xpath="//span[contains(text(),'Association avec les rôles')]")
+    public WebElement texteAssociationRole;
+
+    @FindBy (xpath="//td[contains(text(),'Ajouter un rôle')]")
+    public WebElement boutonAjouterRole;
+
+    @FindBy(xpath="//span[contains(text(),'Participants')]")
+    public WebElement champNomRole;
+
+    @FindBy(xpath="//span[contains(text(),'Canevas')]")
+    public WebElement champNomRoleCanevas;
+
+    @FindBy(xpath = "//td[contains (text(),'Canevas')]")
+    public WebElement choixCanevasDansMenuDeroulant;
 
     //*****Methode***
     public PageProfil enregistrerProfilPageCreeProfil(WebDriverWait wait) throws Throwable {
@@ -75,55 +93,67 @@ public class PageCreeProfil extends PageHeader {
     public void creerProfil (String name, WebDriverWait wait) throws Throwable {
         //nommer nouveau profil qu'on veut créer
         tools.clickElement(wait, ChampNomProfil);
-        LOGGER.info("Veuillez donner un nom à votre profil");
         tools.setValue(wait, ChampNomProfil, name);
         // dérouler menu déroulant des roles disponibles
         tools.clickElement(wait, menuDeroulantRole);
         // attribuer les roles Dépenses et Participant à ce nouveau profil
         tools.clickElement(wait, choixParticipantsDansMenuDeroulant);
+        tools.clickElement(wait, boutonAjouterRole);
+        tools.clickElement(wait, menuDeroulantRole);
         tools.clickElement(wait, choixDépensesDansMenuDeroulant);
+        tools.clickElement(wait, boutonAjouterRole);
     }
 
-        public void passerSurInfoBulle() {
-           //set methode action
-            Actions action = new Actions(driver);
-            //déplacer la souris sur l'icone supprimer role
-            action.moveToElement(boutonSupprimerRole1);
-           // vérification que le texte 'supprimer' est bien présent
-            infoBulleSupprimer.getText();
-            assertEquals ("Supprimer", infoBulleSupprimer.getText());
-        }
+    public void ajouterAutrerole(WebDriverWait wait) throws Throwable {
+        tools.clickElement(wait,menuDeroulantRole);
+        tools.clickElement(wait,choixCanevasDansMenuDeroulant);
+        tools.clickElement(wait,boutonAjouterRole);
+    }
 
-        public void suppressionRoles() {
-            boutonSupprimerRole1.click();
-            WebDriverWait wait = new WebDriverWait(driver, 10);
-            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[contains(text(), 'Modifier tous les projets')]"))));
-            boutonSupprimerRole2.click();
-            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//span[contains(text(), 'Participants')]"))));
-        }
+    public void passerSurInfoBulle() {
+        //set methode action
+        Actions action = new Actions(driver);
+        //déplacer la souris sur l'icone supprimer role
+        action.moveToElement(boutonSupprimerRole1);
+        // vérification que le texte 'supprimer' est bien présent
+        infoBulleSupprimer.getText();
+        assertEquals ("Supprimer", infoBulleSupprimer.getText());
+    }
 
-        public void selectionnerMemeRole (WebDriverWait wait) throws Throwable {
-                // dérouler menu déroulant des roles disponibles
-                tools.clickElement(wait,menuDeroulantRole);
-                // attribuer le role Participants au profil
-                tools.clickElement(wait, choixParticipantsDansMenuDeroulant);
-                //set methode action
-                Actions action = new Actions(driver);
-                //déplacer la souris sur l'icone supprimer role
-                action.moveToElement(boutonSupprimerRole1);
-                //essayer à nouveau de sélectionner le role Participants pour le profil
-                tools.clickElement(wait, menuDeroulantRole);
-                tools.clickElement(wait,choixParticipantsDansMenuDeroulant);
-            }
+    public void suppressionRoles() throws InterruptedException {
+        boutonSupprimerRole1.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(boutonSupprimerRole2));
+        Thread.sleep(10000);
+        boutonSupprimerRole2.click();
+        Thread.sleep(10000);
+        boutonSupprimerRole2.click();
+    }
+
+    public void selectionnerMemeRole (WebDriverWait wait) throws Throwable {
+        // dérouler menu déroulant des roles disponibles
+        tools.clickElement(wait,menuDeroulantRole);
+        // attribuer le role Participants au profil
+        tools.clickElement(wait, choixParticipantsDansMenuDeroulant);
+        tools.clickElement(wait, boutonAjouterRole);
+        //set methode action
+        Actions action = new Actions(driver);
+        //déplacer la souris sur l'icone supprimer role
+        action.moveToElement(boutonSupprimerRole1);
+        //essayer à nouveau de sélectionner le role Participants pour le profil
+        tools.clickElement(wait, menuDeroulantRole);
+        tools.clickElement(wait,choixParticipantsDansMenuDeroulant);
+    }
 
 
-        public void modifiernom(String newname, WebDriverWait wait) throws Throwable {
+    public void modifiernom(String newname, WebDriverWait wait) throws Throwable {
         tools.clickElement(wait,ChampNomProfil);
         ChampNomProfil.clear();
         LOGGER.info("Entrer le nouveau nom que vous voulez donner au profil");
         tools.setValue(wait,ChampNomProfil,newname);
 
-            }
+    }
+
 
 
 

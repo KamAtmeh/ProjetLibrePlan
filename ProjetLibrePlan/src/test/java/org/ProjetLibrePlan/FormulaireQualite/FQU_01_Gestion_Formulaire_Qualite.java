@@ -1,6 +1,7 @@
 package org.ProjetLibrePlan.FormulaireQualite;
 
 import org.ProjetLibrePlan.*;
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -108,6 +109,10 @@ public class FQU_01_Gestion_Formulaire_Qualite extends AbstractTest {
 
         //suppression formulaire
         pageformulairequalite.supprimerFormulairesurPageListeFormulaire(wait);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='message_INFO']]")));
+        LOGGER.info("Formulaire qualite supprime");
+
+
 
 
 
