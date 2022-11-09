@@ -4197,3 +4197,54 @@
 2022-11-09 03:16:20 | INFO  | 115   | GenTools                  : Réinitialisation effectuée
 2022-11-09 03:16:20 | INFO  | 117   | GenTools                  : Fermeture de la connexion à la base de donnée
 2022-11-09 03:16:20 | INFO  | 119   | GenTools                  : Déconnexion de la base de donnée
+2022-11-09 10:55:27 | INFO  | 51    | GenTools                  : Setup LOGGER ...
+2022-11-09 10:55:27 | INFO  | 53    | GenTools                  : Setup LOGGER executed
+2022-11-09 10:55:27 | INFO  | 55    | GenTools                  : Launching chrome ...
+2022-11-09 10:55:30 | INFO  | 76    | GenTools                  : chrome launched
+2022-11-09 10:55:30 | INFO  | 79    | GenTools                  : Setup Properties ...
+2022-11-09 10:55:30 | INFO  | 81    | GenTools                  : Setup properties executed
+2022-11-09 10:55:30 | INFO  | 83    | GenTools                  : Setup of implicit wait and driver ...
+2022-11-09 10:55:30 | INFO  | 87    | GenTools                  : Setup of implicit wait and driver executed
+2022-11-09 10:55:30 | INFO  | 27    | GenTools                  : START OF TEST
+2022-11-09 10:55:30 | INFO  | 30    | GenTools                  : Loading properties file ...
+2022-11-09 10:55:30 | INFO  | 32    | GenTools                  : Properties file loaded
+2022-11-09 10:55:30 | INFO  | 35    | GenTools                  : Lancement de la page web
+2022-11-09 10:55:30 | INFO  | 39    | GenTools                  : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 10:55:30 | INFO  | 40    | GenTools                  : Initialisation du driver à la page login
+2022-11-09 10:55:30 | INFO  | 42    | GenTools                  : Connexion au site
+2022-11-09 10:55:30 | INFO  | 31    | GenTools                  : Vider le champ username et ajouter le username
+2022-11-09 10:55:31 | INFO  | 35    | GenTools                  : Vider le champ password et ajouter le password
+2022-11-09 10:55:31 | INFO  | 39    | GenTools                  : Click on Sign In button
+2022-11-09 10:55:31 | INFO  | 44    | GenTools                  : Vérification que l'onglet Calendrier est actif
+2022-11-09 10:55:32 | INFO  | 47    | GenTools                  : ******************************* CHOIX DE MENU *******************************
+2022-11-09 10:55:32 | INFO  | 48    | GenTools                  : Clique sur le menu Ressources et choix Type d'avancement
+2022-11-09 10:55:34 | INFO  | 94    | GenTools                  : Take screenshot of last page ...
+2022-11-09 10:55:34 | INFO  | 96    | GenTools                  : Screenshot taken
+2022-11-09 10:55:34 | INFO  | 97    | GenTools                  : Quit driver ...
+2022-11-09 10:55:35 | INFO  | 99    | GenTools                  : Driver stopped
+2022-11-09 11:00:19 | INFO  | 51    | GenTools                  : Setup LOGGER ...
+2022-11-09 11:00:19 | INFO  | 53    | GenTools                  : Setup LOGGER executed
+2022-11-09 11:00:19 | INFO  | 55    | GenTools                  : Launching chrome ...
+2022-11-09 11:00:21 | INFO  | 76    | GenTools                  : chrome launched
+2022-11-09 11:00:21 | INFO  | 79    | GenTools                  : Setup Properties ...
+2022-11-09 11:00:21 | INFO  | 81    | GenTools                  : Setup properties executed
+2022-11-09 11:00:21 | INFO  | 83    | GenTools                  : Setup of implicit wait and driver ...
+2022-11-09 11:00:22 | INFO  | 87    | GenTools                  : Setup of implicit wait and driver executed
+2022-11-09 11:00:22 | INFO  | 27    | GenTools                  : START OF TEST
+2022-11-09 11:00:22 | INFO  | 30    | GenTools                  : Loading properties file ...
+2022-11-09 11:00:22 | INFO  | 32    | GenTools                  : Properties file loaded
+2022-11-09 11:00:22 | INFO  | 35    | GenTools                  : Lancement de la page web
+2022-11-09 11:00:22 | INFO  | 39    | GenTools                  : ******************************* INITIALISATION ET CONNEXION AU SITE *******************************
+2022-11-09 11:00:22 | INFO  | 40    | GenTools                  : Initialisation du driver à la page login
+2022-11-09 11:00:22 | INFO  | 42    | GenTools                  : Connexion au site
+2022-11-09 11:00:22 | INFO  | 31    | GenTools                  : Vider le champ username et ajouter le username
+2022-11-09 11:00:22 | INFO  | 35    | GenTools                  : Vider le champ password et ajouter le password
+2022-11-09 11:00:22 | INFO  | 39    | GenTools                  : Click on Sign In button
+2022-11-09 11:00:22 | INFO  | 44    | GenTools                  : Vérification que l'onglet Calendrier est actif
+2022-11-09 11:00:24 | INFO  | 47    | GenTools                  : ******************************* CHOIX DE MENU *******************************
+2022-11-09 11:00:24 | INFO  | 48    | GenTools                  : Clique sur le menu Ressources et choix Critère
+2022-11-09 11:00:25 | INFO  | 51    | GenTools                  : ******************************* VERIFICATION CONTENU PAGE *******************************"
+2022-11-09 11:00:25 | INFO  | 94    | GenTools                  : Take screenshot of last page ...
+2022-11-09 11:00:25 | INFO  | 96    | GenTools                  : Screenshot taken
+2022-11-09 11:00:25 | INFO  | 97    | GenTools                  : Quit driver ...
+2022-11-09 11:00:26 | INFO  | 99    | GenTools                  : Driver stopped
