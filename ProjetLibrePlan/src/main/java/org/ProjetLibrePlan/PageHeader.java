@@ -69,7 +69,7 @@ public class PageHeader extends AbstractPage {
 
 
 
-    // méthode
+    // function to select option in menu
     public <T> T clickOption(WebDriverWait wait, String menu, String option, Class<T> className) throws Throwable {
         Actions action = new Actions(driver);
         String xpathMenu = "//button[contains(text(), \"" + menu + "\")]";

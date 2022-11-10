@@ -42,14 +42,16 @@ public class GenTools extends Logging {
         element.sendKeys(string);
     }
 
-    public void setCheckbox(WebDriverWait wait, WebElement element, Boolean checked) throws Throwable {
-        if(checked == true && !(element.isSelected())){
+    // function to set checkbox selection
+    public void setCheckbox(WebDriverWait wait, WebElement element, Boolean wantChecked) throws Throwable {
+        if(wantChecked == true && !(element.isSelected())){
             clickElement(wait, element);
-        } else if (checked == false && element.isSelected()) {
+        } else if (wantChecked == false && element.isSelected()) {
             clickElement(wait, element);
         }
     }
 
+    // function to verify whether element is modifiable
     public boolean isModifiable(WebDriverWait wait, WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
         String tag = element.getTagName();
